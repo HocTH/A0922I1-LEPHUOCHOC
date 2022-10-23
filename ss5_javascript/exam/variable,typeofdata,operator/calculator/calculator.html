@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+
+<body>
+<form>
+    <table  >
+        <tr>
+            <td>
+                <input type="number" name="number1" id="firstNumber">
+            </td>
+            <td>
+                <input type="number" name="number2" id="secondNumber">
+            </td>
+        </tr>
+        <tr  >
+            <td >
+                <button  value="1" type="button" onclick="calculate('1')">Addition(+)</button>
+                <button  id="index" value="2" type="button" onclick="calculate('2')">Subtraction(-)</button>
+
+            </td>
+            <td >
+                <button value="3" type="button" onclick="calculate('3') ">Multiplication(*)</button>
+                <button value=" 4" type="button" onclick="calculate('4')">Division(/)</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<p > Result: <span id="result" > </span> </p>
+</body>
+<script>
+
+
+    function calculate(sign1){
+        let a = +document.getElementById("firstNumber").value;
+        console.log(typeof a);
+        let b = +document.getElementById("secondNumber").value;
+        let signal=sign1;
+        console.log(signal);
+        if ( signal==1){
+            result = a+b;
+        } else if ( signal==2){
+            result = a-b;
+        } else if ( signal==3 ){
+            result = a*b;
+        } else {
+            result = a/b
+        };
+        return  document.getElementById("result").textContent=result;
+    }
+</script>
+</html>

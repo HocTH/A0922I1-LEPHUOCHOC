@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <th>Amount:</th>
+            <th>Form Currency</th>
+            <th>To Currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td >
+                <input type="number" name="quanity1" min="0" id="quanity">
+            </td>
+            <td>
+                <select id ="currency">
+                <option name="currency1" value="VND" >VND</option>
+                <option name="currency1" value="USD">USD</option>
+                <option name="currency1" value="GBP">GBP</option>
+                <option name="currency1" value="EUR">EUR</option>
+                <option name="currency1" value="SGD">SGD</option>
+                <option name="currency1" value="JPY">JPY</option>
+            </select>
+            </td>
+            <td>
+                <select id ="currency1" >
+                    <option name="currency" value="VND" >VND</option>
+                    <option name="currency" value="USD">USD</option>
+                    <option name="currency" value="GBP">GBP</option>
+                    <option name="currency" value="EUR">EUR</option>
+                    <option name="currency" value="SGD">SGD</option>
+                    <option name="currency" value="JPY">JPY</option>
+                </select>
+            </td>
+            <td>
+                <button type="button" onclick="getQuanity()">Convert</button>
+            </td>
+        </tr>
+    </table>
+    </form><br>
+<p > Result: <span id="result" > </span> </p>
+<script src="index2.js">
+</script>
+</body>
+</html>
