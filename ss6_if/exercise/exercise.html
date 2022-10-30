@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>exercise</title>
 </head>
 <body>
-$END$
+
 </body>
+<script>
+   var weight =  +prompt("Input Weight(kg)");
+   var height =  +prompt("Input Weight(m)");
+    function BMI(){
+        var BMI = weight/ Math.pow(height,2)
+        if (BMI<18){
+            alert("Underweight");
+        } else if ( BMI<25 ){
+            alert("Normal");
+        } else if (BMI<30){
+            alert("Overweight");
+        } else {
+            alert("Obese")
+        }
+    }
+    BMI();
+</script>
 </html>

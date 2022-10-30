@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Mouse</title>
 </head>
 <body>
-$END$
+<form>
+    <img style="width: 300px" id="tinPhoto" src="https://scontent.fdad3-6.fna.fbcdn.net/v/t39.30808-6/300340843_746683836401114_9601349411452216_n.jpg?stp=cp6_dst-jpg&_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=1aNxm27PzkQAX9ucczi&_nc_ht=scontent.fdad3-6.fna&oh=00_AT-UKO8Xc5wizWPehtxYs1jD0R5g1X0ylP86k2nQ3Vp-XQ&oe=6357F4F8">
+    <p> Click the button to move the photo of tinh to right.</p>
+    <input type="button" value="Click me" onclick="moveRight();"/>
+</form>
 </body>
+<script>
+    var photoOjt = null;
+    photoOjt = document.getElementById('tinPhoto');
+    function init() {
+     photoOjt = document.getElementById("tinPhoto");
+     photoOjt.style.position = 'relative';
+     photoOjt.style.left = '0px';
+    }
+    function moveRight(){
+        photoOjt.style.left = parseInt(photoOjt.style.left) + 10+'px';
+    }
+    window.onload = init();
+</script>
 </html>

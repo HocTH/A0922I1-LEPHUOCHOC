@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>switchandcase</title>
 </head>
 <body>
-$END$
+<input type="number" name="month" id="indexMonth" >
+<input type="button" value="calculate"  onclick="calculate()">
+<p id="result" ></p>
 </body>
+<SCRIPT>
+
+    function calculate() {
+        var monthInput = document.getElementById("indexMonth").value*1;
+        if (monthInput<13 && monthInput >0 && Number.isInteger(monthInput) ){
+            switch (monthInput) {
+                case 1 :
+                case 3 :
+                case 5 :
+                case 7 :
+                case 9 :
+                case 11 :
+                    document.getElementById("result").innerHTML= "tháng" +" "+ monthInput +" "+ "có 31 ngày";
+                    break;
+                case 4 :
+                case 6 :
+                case 8 :
+                case 10 :
+                case 12:
+                    document.getElementById("result").innerHTML= "tháng" +" "+ monthInput +" "+ "có 30 ngày";
+                    break;
+                default : document.getElementById("result").innerHTML= "tháng" +" "+  monthInput +" "+ "có 29 hoặc 28 ngày";
+
+
+            }
+        } else {
+            alert("Nhập lại tháng.")
+        }
+        }
+
+
+</SCRIPT>
 </html>

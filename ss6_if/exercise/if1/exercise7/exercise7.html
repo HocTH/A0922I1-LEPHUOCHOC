@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    var fixCost = 25000;
+    var Minites = +prompt("Minites")
+    var cost;
+    if (Minites>200){
+        cost= 150*400+50*600+(Minites-200)*200;
+    } else{
+        if(Minites>50){
+            cost=50*600+400*(Minites-50)
+        } else{
+            cost=Minites*600
+        }
+    }
+    cost+=fixCost;
+    alert('fixCost: '+cost)
+</script>
+</html>

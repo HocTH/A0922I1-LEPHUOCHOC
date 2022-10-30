@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Electricity bill</title>
+</head>
+<body>
+
+</body>
+<script>
+    var use = +prompt("electricity consumption")
+    var cost;
+    if (use >200){
+        cost= 150*400+50*600+(use -200)*200;
+    } else{
+        if(use >50){
+            cost=50*600+400*(use -50)
+        } else{
+            cost=use *600
+        }
+    }
+    alert('Cost: '+cost)
+</script>
+</html>

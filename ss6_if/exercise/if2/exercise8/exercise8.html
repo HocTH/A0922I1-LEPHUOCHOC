@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yearsold</title>
+</head>
+<body>
+</body>
+<script>
+    var a = +prompt("Nhap tuoi cua mot nguoi.")
+    var b = !Number.isNaN(a)
+    if(b){
+        if(Number.isInteger(a)){
+            if(a>120 && a>0){
+                alert("Tuoi cua mot nguoi");
+            }else {
+                alert("Khong phai tuoi cua mot nguoi");
+            };
+
+        }else {
+            alert("Khong phai tuoi cua mot nguoi");
+        };
+    }else {
+        alert("Khong phai tuoi cua mot nguoi");
+    }
+</script>
+</html>

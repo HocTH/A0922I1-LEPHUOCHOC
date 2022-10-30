@@ -2,9 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>keyEvent</title>
 </head>
-<body>
-$END$
+<body onload="docReady()">
+<img id="nobita" src="https://scontent.fdad3-6.fna.fbcdn.net/v/t39.30808-6/300340843_746683836401114_9601349411452216_n.jpg?stp=cp6_dst-jpg&_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=1aNxm27PzkQAX9ucczi&_nc_ht=scontent.fdad3-6.fna&oh=00_AT-UKO8Xc5wizWPehtxYs1jD0R5g1X0ylP86k2nQ3Vp-XQ&oe=6357F4F8" style="position:absolute;left:0; top:0;" height="100" width="80"/>
 </body>
+<script>
+    function upArrowPressed() {
+        let element = document.getElementById("nobita");
+        element.style.top = parseInt(element.style.top) + 10 + "px";
+    }
+    function downArrowPressed() {
+        var element = document.getElementById("nobita");
+        element.style.top = parseInt(element.style.top) - 10 + "px";
+    }
+    function leftArrowPressed() {
+        var element = document.getElementById("nobita");
+        element.style.left = parseInt(element.style.left) + 10 + "px";
+    }
+    function rightArrowPressed() {
+        var element = document.getElementById("nobita");
+        element.style.left = parseInt(element.style.left) - 10 + "px";
+
+    }
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                leftArrowPressed();
+                break;
+            case 39:
+                rightArrowPressed();
+                break;
+            case 38:
+                upArrowPressed();
+                break;
+            case 40:
+                downArrowPressed();
+                break;
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+</script>
 </html>

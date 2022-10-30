@@ -2,9 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>calculation</title>
 </head>
 <body>
-$END$
+<form>
+    <table>
+        <tr>
+            <td colspan="4"> <input type="text"  id="screen" ></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="1" value="1" onclick="buttonPressed(this.value)" ></td>
+            <td><input type="button" id="2" value="2" onclick="buttonPressed(this.value)"></td>
+            <td><input type="button" id="3" value="3" onclick="buttonPressed(this.value)"></td>
+            <td><input type="button" id="+" value="+" onclick="buttonPressed(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="4" value="4" onclick="buttonPressed(this.value)"></td>
+            <td><input type="button" id="5" value="5" onclick="buttonPressed(this.value)"></td>
+            <td><input type="button" id="6" value="6" onclick="buttonPressed(this.value)"></td>
+            <td><input type="button" id="-" value="-" onclick="buttonPressed(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="7" value="7" onclick="buttonPressed(this.value)"></td>
+            <td><input type="button" id="8" value="8" onclick="buttonPressed(this.value)"></td>
+            <td><input type="button" id="9" value="9" onclick="buttonPressed(this.value)"></td>
+            <td><input type="button" id="*" value="*" onclick="buttonPressed(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="c" value="C" onclick="clearScreen()"></td>
+            <td><input type="button" id="0" value="0" onclick="buttonPressed(this.value)"></td>
+            <td><input type="button" id="=" value="=" onclick="calculations()"></td>
+            <td><input type="button" id="/" value="/" onclick="buttonPressed(this.value)"></td>
+        </tr>
+    </table>
+
+</form>
 </body>
+<script>
+    function buttonPressed(sign) {
+
+     document.getElementById("screen").value += sign;
+
+
+    }
+    function clearScreen() {
+        document.getElementById("screen").value="";
+
+    }
+    function calculations() {
+        var result1 = eval(document.getElementById("screen").value);
+        document.getElementById("screen").value =result1;
+
+    }
+</script>
 </html>

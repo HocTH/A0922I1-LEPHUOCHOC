@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phuongtrinhbac2</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <td>
+                <input type="number"  id="a" placeholder="a">
+            </td>
+            <td>x<sup>2</sup></td>
+            <td>+</td>
+            <td>
+                <input type="number"  id="b" placeholder="b">
+            </td>
+            <td>x</td>
+            <td>+</td>
+            <td>
+                <input type="number"  id="c" placeholder="c">
+            </td>
+            <td>=</td>
+            <td>0</td>
+
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="x1" placeholder="x1" >
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="x2" placeholder="x2" >
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Result" onclick="calculate1()">
+            </td>
+
+        </tr>
+    </table>
+</body>
+<script>
+
+    function calculate1(){
+        var a = +document.getElementById("a").value;
+        var b = +document.getElementById("b").value;
+        var c = +document.getElementById("c").value;
+        var delta;
+        var x1,x2;
+        delta = Math.pow(b,2) - 4*a*c;
+        console.log(delta)
+        if(a==0){
+            alert("a phai khac 0")
+        }else {
+            if( delta < 0){
+                document.getElementById("x1").value = " Vo nghiem";
+                document.getElementById("x2").value = " Vo nghiem";
+            }
+            else{
+                if(delta == 0){
+                    x1 = -b/2*a;
+                    document.getElementById("x1").value = x1;
+                    document.getElementById("x2").value = x1;
+                } else{
+                    if(delta > 0){
+                        x1 = (-b+Math.sqrt(delta)) / 2*a;
+                        x2 = (-b-Math.sqrt(delta)) / 2*a;
+                        document.getElementById("x1").value = x1;
+                        document.getElementById("x2").value = x2;
+                    }
+                }
+            };
+
+        };
+        }
+
+</script>
+</html>

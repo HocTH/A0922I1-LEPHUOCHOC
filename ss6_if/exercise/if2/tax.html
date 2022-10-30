@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>tax</title>
 </head>
 <body>
-$END$
 </body>
+<script>
+    var salary = +prompt("Salary");
+    var tax;
+    if(salary<=4){
+        tax = 0;
+    } else if (salary<=6){
+        tax = salary*0.05;
+    } else if(salary<=9){
+        tax = salary*0.1;
+    }else if(salary<=14){
+        tax = salary*0.15;
+    }else if(salary<=24){
+        tax = salary*0.2;
+    }else if(salary<=44){
+        tax = salary*0.25;
+    }else if(salary<=84){
+        tax = salary*0.3;
+    }else {
+        tax = salary*0.35;
+    }
+    alert(tax);
+
+</script>
 </html>

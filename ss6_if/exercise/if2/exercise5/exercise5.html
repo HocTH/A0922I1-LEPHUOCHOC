@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>triangle</title>
+</head>
+<body>
+<script>
+    var a = +prompt("Input a (m)");
+    var b = +prompt("Input b (m)");
+    var s
+    if (!isNaN(a) && Number.isInteger(a) && a>0 ){
+        if (!isNaN(b) && Number.isInteger(b) && b>0 ){
+            s = a*b/2;
+            alert("Square of triangle: "+ s+"m2");
+        }
+    } else{
+        alert(" Input again");
+    }
+</script>
+</body>
+</html>
