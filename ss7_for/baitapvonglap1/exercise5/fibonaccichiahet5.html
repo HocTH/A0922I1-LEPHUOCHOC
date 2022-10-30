@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tong20sofibonacci</title>
+</head>
+<body>
+</body>
+<script>
+    var result=null ;
+    var startNumber = +prompt("Start number") ;
+    if (startNumber == 0) {
+        firstNumber = 0;
+        secondNumber = 1;
+        for (let i = 2;  ; i++) {
+            var thirdNumber;
+            thirdNumber = firstNumber + secondNumber;
+            result = thirdNumber ;
+            if (result%5==0){
+                break;
+            }
+            firstNumber = secondNumber;
+            secondNumber = thirdNumber;
+        };
+
+    } else if (startNumber == 1) {
+        firstNumber = 1;
+        secondNumber = 1;
+        for (let i = 2; ; i++) {
+            var thirdNumber;
+            thirdNumber = firstNumber + secondNumber;
+            result = thirdNumber;
+            if (result%5==0){
+                break;
+            }
+            firstNumber = secondNumber;
+            secondNumber = thirdNumber;
+        };
+    };
+
+
+    document.write(result);
+    console.log(result);
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>giaithua</title>
+</head>
+<body>
+</body>
+<script>
+
+    var numberInput = +prompt("Input number to calculate");
+    var result=1;
+    if (numberInput<0 ){
+        alert( "Input again")
+    } else {
+        if (numberInput <=1){
+            result = 1;
+            alert("result: "+result);
+        }else {
+            if (numberInput>1){
+                for (i = numberInput;i>=1;i--){
+                    result = result*i;
+                }
+                alert("result: "+result);
+            }
+        }
+    }
+</script>
+</html>

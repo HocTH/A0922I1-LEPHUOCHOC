@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var a = +prompt("Input point of the commom test");
+    var b = +prompt("Input point of the mid test ");
+    var c = +prompt("Input point of the end test ");
+    var avg = (a+b*2+c*3)/6;
+    if(avg>75){
+        alert("A level");
+    } else{
+        if(  avg>=60){
+            alert("B level");
+        } else {
+            if(  avg>=45){
+                alert("C level");
+        } else {
+                if(  avg>=30){
+                    alert("D level");
+            } else{
+                    alert("F level");
+                }
+            }
+        }
+    }
+
+
+</script>
+</html>

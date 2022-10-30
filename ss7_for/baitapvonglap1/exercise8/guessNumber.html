@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>guessNumber+</title>
+</head>
+<body>
+<input type="button" id="value" value="Play" onclick="guess()">
+</body>
+<script>
+    function guess() {
+        var firstRange = +prompt("Input number which indicate  first range");
+        do {
+            var secondRange =  +prompt("Input number which indicate  second range");
+        }while (
+            firstRange > secondRange
+            );
+        var range = Math.abs(secondRange- firstRange);
+        var numberOfComputer = Math.round(Math.random()*range)+firstRange;
+        var k = 1;
+        do {
+            var userChoose = +prompt("You guess");
+            if (userChoose > numberOfComputer){
+                alert("Your number is bigger ")
+            } else if (userChoose < numberOfComputer){
+                alert("Your number is smaller ")
+            } else {
+                alert("Your number is true")
+            };
+            k++
+        } while ( userChoose != numberOfComputer  && k<=3 );
+        console.log(k);
+
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <td>
+                <input type="number"  id="a" placeholder="a">
+            </td>
+            <td>x</td>
+            <td>+</td>
+            <td>
+                <input type="number"  id="b" placeholder="b">
+            </td>
+            <td>=</td>
+            <td>0</td>
+
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="x1" placeholder="x1" >
+                <input type="button" value="Result" onclick="calculate1()">
+            </td>
+
+        </tr>
+    </table>
+</form>
+</body>
+<script>
+
+    function calculate1(){
+        var a = +document.getElementById("a").value;
+        console.log(a);
+        var b = +document.getElementById("b").value;
+        var x;
+        if( a == 0){
+            if(b==0){
+               document.getElementById("x1").value = "Phuong trinh vo so nghiem";
+            };
+            if(b!=0){
+                document.getElementById("x1").value = "Phuong trinh vo nghiem";
+            }
+        } else{
+            if(a!=0){
+                x = -b/a;
+                document.getElementById("x1").value = x;
+            }
+        };
+
+    };
+</script>
+</html>
