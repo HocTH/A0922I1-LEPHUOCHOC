@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>replace</title>
+</head>
+<body>
+</body>
+<script>
+    var arr0 = [];
+    var i = 0;
+    var quanityArr = +prompt("Quanity of element in array.")
+    do {
+        var element = prompt("Input element");
+        arr0.push(element);
+        i++;
+    }while ( i < quanityArr);
+    for (let j = 0; j < arr0.length ; j++) {
+        if (arr0[j] == "-"){
+            arr0[j] = "_";
+        }
+    }
+    alert("the replaced array is: "+arr0);
+</script>
+</html>

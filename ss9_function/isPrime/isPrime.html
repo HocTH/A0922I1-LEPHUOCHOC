@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>isPrime</title>
+</head>
+<body>
+</body>
+<script>
+    function isPrime(number) {
+        var flag = 0;
+        if (number < 2 ){
+           flag = -1;
+        } else {
+            for (let i = 2; i <number-1 ; i++) {
+                 if (number % i == 0){
+                    flag = -1;
+                 }
+            }
+        }
+        if (flag == 0){
+             return console.log(number + " is a prime number.")
+        }else {
+            return console.log(number + " is not a prime number.")
+        }
+    };
+
+    isPrime(21)
+</script>
+</html>

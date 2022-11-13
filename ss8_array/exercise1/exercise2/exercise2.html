@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>indexOfMax</title>
+</head>
+<body>
+</body>
+<script>
+    var arrNum = [];
+    var i = 0;
+    do {
+        var number = +prompt("Input number");
+        if (arrNum.indexOf(number) == -1){
+            arrNum.push(number);
+            i++;
+        }
+    }while ( i < 10);
+    for (const arrNumKey in arrNum) {
+        var max = arrNum[arrNumKey];
+        var result = 0;
+        result += arrNum[arrNumKey];
+        if (max < arrNum[arrNumKey+1]){
+            max = arrNumKey[arrNumKey+1];
+        }
+    };
+    alert('So lon nhat trong mang la: '+max);
+    alert("Chi so cua so lon nhat la : "+ arrNum.indexOf(max));
+</script>
+</html>

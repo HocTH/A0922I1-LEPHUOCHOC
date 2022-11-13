@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dictionary</title>
+</head>
+<body>
+</body>
+
+
+<script>
+    var vocab = ["word","class","bottle","girl","boy"];
+    var meaning = ["từ", "lớp","chai","con gái","con trai"];
+    var inputVocab1 = prompt("Nhập từ vựng");
+    var inputVocab = inputVocab1.toLowerCase();
+    if ( vocab.indexOf(inputVocab) != -1){
+        var indexnumber = vocab.indexOf(inputVocab);
+        alert("Nghia cua tu la: "+meaning[indexnumber]);
+    } else {
+        alert("Tu khong co trong du lieu");
+    };
+</script>
+</html>

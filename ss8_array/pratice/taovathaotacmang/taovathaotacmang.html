@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>taocathaotacmang</title>
+</head>
+<body>
+<input type="text" id="textValue">
+<input type="button" id="Add" value="Add" onclick="add_element_to_array()" >
+<input type="button" id="Display" value="Display" onclick="display_array()" >
+<div id = "result"></div>
+</body>
+<script>
+    let x = 0;
+    let array = Array();
+    function add_element_to_array() {
+          array[x] = document.getElementById("textValue").value;
+          alert("Element: "+ array[x]+  "Add at index"+ x);
+          x++;
+          document.getElementById("textValue").value="";
+    };
+    function  display_array() {
+         let e = "<hr>";
+        for (let i = 0; i <array.length ; i++) {
+            e += "Element: " + i + "=" + array[i]+"<br>";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+</script>
+</html>

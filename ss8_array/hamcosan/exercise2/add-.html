@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add-</title>
+</head>
+<body>
+</body>
+<script>
+    var a = prompt("Nhap so dien thoai");
+    var b = a.toString();
+    var array = [];
+    for (let i = 0; i <a.length ; i++) {
+        array[i]= a[i];
+    };
+    console.log(array);
+    data = "";
+    for (let i = 1; i <array.length ; i++) {
+        if (array[i] %2==0 && array[i-1] %2==0 ){
+            array.splice(i,0,"-");
+        }
+    }
+</script>
+</html>

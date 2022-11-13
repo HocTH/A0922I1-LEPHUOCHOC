@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reverse</title>
+</head>
+<body>
+</body>
+<SCRIPT>
+    var arrNum = [];
+    var i = 0;
+    var reverseArr;
+    do {
+        var number = +prompt("Input number");
+        if (arrNum.indexOf(number) == -1){
+            arrNum.push(number);
+            i++;
+        }
+    }while ( i < 10);
+   reverseArr = arrNum.reverse();
+   alert("Mang dao nguoc la : "+reverseArr);
+</SCRIPT>
+</html>

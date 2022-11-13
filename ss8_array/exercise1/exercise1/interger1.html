@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>interger1</title>
+</head>
+<body>
+</body>
+ <script>
+     var arrNumbers = [];
+     var countNumber = 0;
+
+     for (let i = 0; i < 10; i++) {
+         var numbers = +prompt("Input number");
+         arrNumbers[i]= numbers;
+     };
+
+     for ( let element of arrNumbers){
+         if (element >= 10){
+             countNumber+=1;
+         }
+     };
+     alert("So luong so nguyen trong mang la: "+countNumber);
+
+
+ </script>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>upValue</title>
+</head>
+<body>
+</body>
+<input id="number" type="number" placeholder="Input number." onchange="upValue(this.value)"
+oninput="upValue(this.value)"
+>
+<p id="result"></p>
+<script>
+
+    function upValue(num) {
+        var temp = +num;
+        return document.getElementById("result").innerText = temp +1;
+    };
+</script>
+</html>

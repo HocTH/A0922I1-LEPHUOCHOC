@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>changeBetweenMeterAndFeet</title>
+</head>
+<body>
+<p>
+    <label>Feet</label>
+    <input id="inputFeet" type="number" placeholder="inputFeet"
+           oninput="meterConverter(this.value)"
+           onchange="meterConverter(this.value)">
+</p>
+<p>
+    Meter: <span id="outputMeter"></span>
+</p>
+<p>
+    <label>Meter</label>
+    <input id="inputMeter" type="number" placeholder="inputMeter"
+           oninput="feetConverter(this.value)"
+           onchange="feetConverter(this.value)">
+</p>
+<p>
+    Feet: <span id="outputFeet"></span>
+</p>
+
+
+</body>
+<script>
+    function meterConverter(lenghtFeet) {
+           var inputFeet = +lenghtFeet;
+           var outputMeter = inputFeet*0.305;
+           document.getElementById("outputMeter").innerHTML = outputMeter;
+    };
+    function feetConverter(lenghtMeter) {
+        var inputFeet = +lenghtMeter;
+        var outputMeter = inputFeet*3.279;
+        document.getElementById("outputFeet").innerHTML = outputMeter;
+    }
+</script>
+
+
+</html>

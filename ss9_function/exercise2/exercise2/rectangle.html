@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rectangle</title>
+</head>
+<body>
+</body>
+<script>
+     var radius = prompt("Input the radius to calculate. ");
+    function rectangle(radius) {
+          var squareCir = (Math.PI*Math.sqrt(radius)).toFixed(2);
+          var perimeter =  (2*Math.PI*radius).toFixed(2);
+          alert("Square of the Circle is " + squareCir);
+          alert("Perimeter of the Circle is " + perimeter);
+    };
+    rectangle(radius);
+</script>
+</html>

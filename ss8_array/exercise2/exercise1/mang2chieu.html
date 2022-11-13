@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mang2chieu</title>
+</head>
+<body>
+</body>
+<script>
+    var arr = [];
+    for (let i = 0; i <5 ; i++) {
+         arr[i] = [];
+        for (let j = 0; j <5 ; j++) {
+            arr[i][j] = +prompt("Input number");
+        }
+    };
+    for (let i = 0; i <5 ; i++) {
+        document.write("row: " +i+"<br>")
+        for (let j = 0; j <5 ; j++) {
+            document.write(arr[i][j]+"<br>");
+        };
+    };
+
+</script>
+</html>

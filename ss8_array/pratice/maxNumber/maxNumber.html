@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>maxNumber</title>
+</head>
+<body>
+</body>
+<script>
+    function maxNumber() {
+        var max,index;
+        var numbers = [2,5,7,8,9,10,15];
+        for (let i = 0; i <numbers.length ; i++) {
+            max = numbers[i];
+            if (max < numbers[i+1]){
+                max = numbers[i+1];
+                index = i;
+            };
+        }
+        console.log('the max number is ' + max + " in the index " + index);
+    };
+    maxNumber();
+</script>
+</html>

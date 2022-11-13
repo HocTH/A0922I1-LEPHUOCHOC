@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>factorialNumber</title>
+</head>
+<body>
+</body>
+<script>
+    var numInput = +prompt("Input number")
+    function factorialNumber(num) {
+        var result = 1;
+        if (numInput >1){
+            for (let i = num; i >0 ; i--) {
+                result = result*i;
+            }
+            return alert(result);
+        } else {
+            alert("Input the number is bigger than 1")
+        }
+
+    };
+    factorialNumber(numInput);
+</script>
+</html>

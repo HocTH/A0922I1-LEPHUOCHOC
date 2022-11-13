@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>timsoV</title>
+</head>
+<body>
+</body>
+<script>
+    var arrNum = [];
+    var i = 0;
+    var numberV = +prompt("Nhap so V");
+    do {
+        var number = +prompt("Input number");
+        if (arrNum.indexOf(number) == -1){
+            arrNum.push(number);
+            i++;
+        }
+    }while ( i < 10);
+    var locationV = arrNum.indexOf(numberV);
+    if (locationV != -1){
+      alert("V is in the array");
+    }else {
+        alert("V is in the array");
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demkytuso</title>
+</head>
+<body>
+</body>
+<SCRIPT>
+    var arr = [];
+    var i = 0;
+    var quanityArr = +prompt("Quanity of arr");
+    do {
+        var element = +prompt("Input element");
+        arr.push(element);
+        i++;
+    }while ( i < quanityArr);
+    var count = 0;
+    for (let j = 0; j <arr.length ; j++) {
+        if (!isNaN(arr[j])){
+            count+=1;
+        }
+    };
+    alert("So ky tu so trong mang la :"+count);
+</SCRIPT>
+</html>

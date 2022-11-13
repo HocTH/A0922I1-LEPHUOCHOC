@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>concatArr</title>
+</head>
+<body>
+</body>
+<script>
+    var arrNum = [];
+    var arrNum1 = [];
+    var i = 0;
+    var j = 0;
+    var arrJoin;
+    do {
+        var number = +prompt("Input number");
+        if (arrNum.indexOf(number) == -1){
+            arrNum.push(number);
+            i++;
+        }
+    }while ( i < 10);
+    do {
+        var number = +prompt("Input number");
+        if (arrNum1.indexOf(number) == -1){
+            arrNum1.push(number);
+            j++;
+        }
+    }while ( j < 10);
+    arrJoin = arrNum.concat(arrNum1);
+    alert("Mang sau khi noi la: "+arrJoin);
+
+
+</script>
+</html>

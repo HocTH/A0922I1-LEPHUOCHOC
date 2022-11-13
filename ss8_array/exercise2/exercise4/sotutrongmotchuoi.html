@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sotutrongchuoi</title>
+</head>
+<body>
+</body>
+<SCRIPT>
+    var arr = [];
+    var i = 0;
+    var quanityArr = +prompt("Quanity of arr");
+    var count = 0;
+    var countText;
+    do {
+        var element = +prompt("Input element");
+        arr.push(element);
+        i++;
+    }while ( i < quanityArr);
+    for (let j = 0; j <arr.length ; j++) {
+        if (!isNaN(arr[j])){
+            count+=1;
+        }
+    };
+     countText = arr.length-count;
+    alert("So tu trong mang la :"+countText);
+</SCRIPT>
+</html>

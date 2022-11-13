@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>caro</title>
+</head>
+<body>
+<h3>Caro Game Simple</h3>
+<p id="carogame"/>
+</body>
+<script>
+    let b = document.getElementById("carogame");
+    let board = [];
+    let data = "";
+    for (let i = 0; i < 5; i++) {
+        board[i] = new Array("*", "*", "*", "*", "*");
+    };
+    for (let i = 0; i < 5; i++) {
+        data += "<br/>";
+        for (let j = 0; j < 5; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;";
+        }
+    }
+    ;
+    var countTurns = 0;
+    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+    b.innerHTML = data;
+    let message1 = function displayMessage() {
+        alert("Player 1 win");
+    };
+
+    let message2 = function displayMessage() {
+        alert("Player 2 win");
+    }
+    function changeValue() {
+        if (countTurns % 2 == 0) {
+            let positionX = prompt("X: ");
+            let positionY = prompt("Y: ");
+            data = "";
+            if (board[positionX][positionY] != "0" && board[positionX][positionY] != "x") {
+                board[positionX][positionY] = "x";
+                countTurns += 1;
+                for (let i = 0; i < 5; i++) {
+                    data += "<br/>";
+                    for (let j = 0; j < 5; j++) {
+                        data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                    }
+                }
+                data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+                b.innerHTML = "<hr/>" + data;
+            } else {
+                alert("Nhap lai gia tri.")
+            }
+
+        } else if (countTurns % 2 != 0) {
+            let positionX = prompt("X: ");
+            let positionY = prompt("Y: ");
+            data = "";
+            if (board[positionX][positionY] != "0" && board[positionX][positionY] != "x") {
+                board[positionX][positionY] = "0";
+                countTurns += 1;
+                for (let i = 0; i < 5; i++) {
+                    data += "<br/>";
+                    for (let j = 0; j < 5; j++) {
+                        data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                    }
+                }
+                data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+                b.innerHTML = "<hr/>" + data;
+            } else {
+                alert("Nhap lai gia tri.")
+            }
+        }
+        checkWin()
+    };
+    function checkWin() {
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+                if (board[i][j] == "x") {
+                    if (board[i][j + 1] == "x" && board[i][j + 2] == "x") {
+                        setTimeout(message1, 200);
+                    }
+                    ;
+                    if (board[i + 1][j + 1] == "x" && board[i + 2][j + 2] == "x") {
+                        setTimeout(message1, 200);
+                    }
+                    ;
+                    if (board[i + 1][j] == "x" && board[i + 2][j] == "x") {
+                        setTimeout(message1, 200);
+                    }
+                    ;
+                } else {
+                    if (board[i][j] == "0") {
+                        if (board[i][j + 1] == "0" && board[i][j + 2] == "0") {
+                            setTimeout(message2, 200);
+                        }
+                        ;
+                        if (board[i + 1][j + 1] == "0" && board[i + 2][j + 2] == "0") {
+                            setTimeout(message2, 200);
+                        }
+                        ;
+                        if (board[i + 1][j] == "0" && board[i + 2][j] == "0") {
+                            setTimeout(message2, 200);
+                        }
+                        ;
+                    }
+
+                }
+
+            }
+
+        }
+    };
+
+
+</script>
+</html>
+

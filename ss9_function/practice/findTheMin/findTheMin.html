@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>findTheMin</title>
+</head>
+<body>
+</body>
+<script>
+    function findTheIndex(arr) {
+        if (arr.indexOf(arr[0]) == -1){
+            return "";
+        }else {
+            let min = arr[0];
+            for (const arrElement of arr) {
+                if ( min > arrElement){
+                    min = arrElement;
+                };
+            };
+            return min;
+        };
+    };
+    var arr1 = [4,2,3,4,0,-1];
+    var arr2 = [];
+    console.log(findTheIndex(arr1));
+    console.log(findTheIndex(arr2));
+
+</script>
+</html>

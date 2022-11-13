@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ScappleDocument ID="1BAC77FC-12C4-40EF-AB63-545D126EE27F" Version="1.2">
+   <Notes>
+      <Note ID="0" FontSize="12" Width="64.4531" Position="230.5,375.8">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Jagged" Weight="0"/>
+         </Appearance>
+         <String>Module 1</String>
+         <ConnectedNoteIDs>4, 11, 14, 17, 19</ConnectedNoteIDs>
+      </Note>
+      <Note ID="1" FontSize="12" Width="105.469" Position="321.9,143.0">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="2"/>
+         </Appearance>
+         <String>Repository</String>
+         <ConnectedNoteIDs>2-4</ConnectedNoteIDs>
+      </Note>
+      <Note ID="2" FontSize="12" Width="148.828" Position="271.9,23.4">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="2"/>
+         </Appearance>
+         <String>-gọi là repo
+-chứa toàn bộ mã nguồn</String>
+         <ConnectedNoteIDs>1</ConnectedNoteIDs>
+      </Note>
+      <Note ID="3" FontSize="12" Width="153.516" Position="439.1,34.4">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="2"/>
+         </Appearance>
+         <String>local repo va remote repo</String>
+         <ConnectedNoteIDs>1</ConnectedNoteIDs>
+      </Note>
+      <Note ID="4" FontSize="12" Width="33.2031" Position="325.8,200.0">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="4"/>
+         </Appearance>
+         <String>GIT</String>
+         <ConnectedNoteIDs>0-1, 5</ConnectedNoteIDs>
+      </Note>
+      <Note ID="5" FontSize="12" Width="60.5469" Position="416.4,188.3">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="2"/>
+         </Appearance>
+         <String>câu lệnh</String>
+         <ConnectedNoteIDs>4, 6-10</ConnectedNoteIDs>
+      </Note>
+      <Note ID="6" FontSize="12" Width="162.891" Position="628.1,43.8">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="2"/>
+         </Appearance>
+         <String>git add: đưa file vao staged</String>
+         <ConnectedNoteIDs>5</ConnectedNoteIDs>
+      </Note>
+      <Note ID="7" FontSize="12" Width="170.703" Position="662.5,95.4">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="2"/>
+         </Appearance>
+         <String>git commit: ghi nhận thay đổi</String>
+         <ConnectedNoteIDs>5</ConnectedNoteIDs>
+      </Note>
+      <Note ID="8" FontSize="12" Width="156.25" Position="671.1,146.9">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="2"/>
+         </Appearance>
+         <String>git push:đẩy local lên remote</String>
+         <ConnectedNoteIDs>5</ConnectedNoteIDs>
+      </Note>
+      <Note ID="9" FontSize="12" Width="168.359" Position="665.6,202.4">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="2"/>
+         </Appearance>
+         <String>git clone sao chep tu remote</String>
+         <ConnectedNoteIDs>5</ConnectedNoteIDs>
+      </Note>
+      <Note ID="10" FontSize="12" Width="94.1406" Position="521.9,65.7">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="0"/>
+         </Appearance>
+         <String>git init tao repo</String>
+         <ConnectedNoteIDs>5</ConnectedNoteIDs>
+      </Note>
+      <Note ID="11" FontSize="12" Width="156.25" Position="475.0,275.0">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="2"/>
+         </Appearance>
+         <String>THUẬT TOÁN/ GIẢI THUẬT</String>
+         <ConnectedNoteIDs>0, 12-13</ConnectedNoteIDs>
+      </Note>
+      <Note Level="1" ID="12" FontSize="12" Width="156.25" Position="736.7,238.4">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="2"/>
+         </Appearance>
+         <String>chỉ thị (intruction) giải quyết vấn đề
+</String>
+         <ConnectedNoteIDs>11</ConnectedNoteIDs>
+      </Note>
+      <Note ID="13" FontSize="12" Width="156.25" Position="725.0,307.9">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="1"/>
+         </Appearance>
+         <String>Mã giã  (pseudo-code) và lưu đồ</String>
+         <ConnectedNoteIDs>11</ConnectedNoteIDs>
+      </Note>
+      <Note ID="14" FontSize="12" Width="39.4531" Position="473.4,347.7">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="2"/>
+         </Appearance>
+         <String>LIST</String>
+         <ConnectedNoteIDs>0, 15-16</ConnectedNoteIDs>
+      </Note>
+      <Note ID="15" FontSize="12" Width="109.766" Position="582.8,321.9">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="1"/>
+         </Appearance>
+         <String>Thẻ &lt;ul> thẻ &lt;ol></String>
+         <ConnectedNoteIDs>14</ConnectedNoteIDs>
+      </Note>
+      <Note ID="16" FontSize="12" Width="110.547" Position="585.2,350.0">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="2"/>
+         </Appearance>
+         <String>-&lt;ul> ko có thứ tự
+&lt;ol> có thứ tự</String>
+         <ConnectedNoteIDs>14</ConnectedNoteIDs>
+      </Note>
+      <Note ID="17" FontSize="12" Width="118.359" Position="385.2,403.2">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="0"/>
+         </Appearance>
+         <String>innerText va HTML</String>
+         <ConnectedNoteIDs>0, 18</ConnectedNoteIDs>
+      </Note>
+      <Note ID="18" FontSize="12" Width="156.25" Position="598.4,415.7">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="0"/>
+         </Appearance>
+         <String>truy xuat noi dung text ko the doc the HTML</String>
+         <ConnectedNoteIDs>17</ConnectedNoteIDs>
+      </Note>
+      <Note ID="19" FontSize="12" Width="75.3906" Position="447.7,454.0">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="0"/>
+         </Appearance>
+         <String>THe HTML</String>
+         <ConnectedNoteIDs>0</ConnectedNoteIDs>
+      </Note>
+      <Note ID="20" FontSize="12" Width="77.7344" Position="596.9,475.0">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="0"/>
+         </Appearance>
+         <String>&lt;H1> &lt;H6></String>
+      </Note>
+      <Note ID="21" FontSize="12" Width="151.953" Position="610.2,507.1">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="0"/>
+         </Appearance>
+         <String>&lt;P> &lt;TABLE> &lt;FORM>
+&lt;INPUT> &lt;DIV>&lt;SPAN>
+&lt;A HEREF=”URL”>
+&lt;IMG SRC=””>
+</String>
+      </Note>
+      <Note ID="22" FontSize="12" Width="78.5156" Position="437.5,558.6">
+         <Appearance>
+            <Alignment>Left</Alignment>
+            <Border Style="Rounded" Weight="0"/>
+         </Appearance>
+         <String>The TABLE</String>
+      </Note>
+   </Notes>
+   <AutoFit>0, 2-7, 9-10, 14-17, 19-22</AutoFit>
+   <NoteStyles>
+      <Style AffectFontStyle="No" AffectNoteBody="Yes" ID="8FF9CA76-F96D-4BF2-BAC7-97BCF91F81D9" AffectAlignment="No" AffectTextColor="No" AffectFade="No" Name="Bubble (Green)" AffectSticky="No" AffectSize="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderColor>0.669413 0.885237 0.56701</BorderColor>
+         <FillColor>0.743786 0.983612 0.629999</FillColor>
+      </Style>
+      <Style AffectFontStyle="No" AffectNoteBody="Yes" ID="16DCFA17-97BD-43A5-8A67-C4C049175E34" AffectAlignment="No" AffectTextColor="No" AffectFade="No" Name="Bubble (Pink)" AffectSticky="No" AffectSize="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderColor>0.894545 0.707759 0.715892</BorderColor>
+         <FillColor>0.98912 0.814084 1.0</FillColor>
+      </Style>
+      <Style AffectFontStyle="No" AffectNoteBody="Yes" ID="D6D6C742-B932-4786-87ED-EB36CF8600DE" AffectAlignment="No" AffectTextColor="No" AffectFade="No" Name="Bubble (Red)" AffectSticky="No" AffectSize="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderColor>0.894545 0.707759 0.715892</BorderColor>
+         <FillColor>0.993942 0.786389 0.795438</FillColor>
+      </Style>
+      <Style AffectFontStyle="No" AffectNoteBody="Yes" ID="04853234-326F-4D7A-ACA2-3D9FD25879EB" AffectAlignment="No" AffectTextColor="No" AffectFade="No" Name="Bubble (Yellow)" AffectSticky="No" AffectSize="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderColor>0.877745 0.828275 0.562127</BorderColor>
+         <FillColor>0.97528 0.920302 0.624582</FillColor>
+      </Style>
+      <Style AffectFontStyle="No" AffectNoteBody="Yes" ID="CB160B40-4270-4CBB-9F9B-3B9FA5B93E88" AffectAlignment="No" AffectTextColor="No" AffectFade="No" Name="Bubble (Blue)" AffectSticky="No" AffectSize="No">
+         <BorderThickness>1</BorderThickness>
+         <BorderColor>0.668971 0.810269 0.895079</BorderColor>
+         <FillColor>0.743297 0.900298 0.994537</FillColor>
+      </Style>
+      <Style AffectFontStyle="No" AffectNoteBody="No" ID="57734317-E866-42DE-ADAC-35E3F416385D" AffectAlignment="No" AffectTextColor="Yes" AffectFade="No" Name="Red Text" AffectSticky="No" AffectSize="No">
+         <TextColor>0.985946 0.0 0.026947</TextColor>
+      </Style>
+      <Style AffectFontStyle="Yes" AffectNoteBody="No" ID="D6D285D5-D1BB-42ED-B1ED-5A6C3631C887" AffectAlignment="Yes" AffectTextColor="No" AffectFade="No" Name="Title Text" AffectSticky="No" AffectSize="No">
+         <IsBold>Yes</IsBold>
+         <FontSize>28.0</FontSize>
+      </Style>
+   </NoteStyles>
+   <UISettings>
+      <BackgroundColor>1.0 0.988373 0.949905</BackgroundColor>
+      <DefaultFont>Arial</DefaultFont>
+      <DefaultTextColor/>
+      <NoteXPadding>8.00</NoteXPadding>
+   </UISettings>
+   <PrintSettings LeftMargin="12.000000" VerticalPagination="Auto" HorizontalPagination="Clip" TopMargin="12.000000" BottomMargin="12.000000" Orientation="Portrait" RightMargin="12.000000" HorizontallyCentered="Yes" VerticallyCentered="Yes" PaperType="na-letter" PagesAcross="1" PaperSize="-1.000000,-1.000000" Collates="Yes" PagesDown="1" ScaleFactor="1.000000"/>
+</ScappleDocument>

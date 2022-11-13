@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>findstar</title>
+</head>
+<body>
+</body>
+<script>
+    var star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe","Regulus" ];
+    var valueStar = ["Ursa Minor", "Tarurus","Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    var inforStar = +prompt("Input the star, you want to find.")
+    function findStar(inputStar) {
+        var indexInValueArr = valueStar.indexOf(inputStar)
+        if(indexInValueArr != -1){
+            alert(inforStar[indexInValueArr]);
+        }else {
+            alert(" Not found ");
+        }
+    }
+    findStar(inforStar);
+</script>
+</html>

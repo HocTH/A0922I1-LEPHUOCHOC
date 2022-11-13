@@ -13,14 +13,10 @@
     while (count < quanity ){
         var checkNumber = j;
         var flag = true;
-        if( j < 2){
-            flag = false;
-        } else {
             for (let i = 2; i <= checkNumber - 1; i++) {
                 var h = checkNumber % i == 0;
                 if (h) {  flag = false; break;}
             };
-        };
         if (flag==true) {
             count += 1;
             stringNumber += checkNumber+"<br>";
