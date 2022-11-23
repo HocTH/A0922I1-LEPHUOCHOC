@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>adamAndEva</title>
+</head>
+<body>
+</body>
+<script>
+    class Apple{
+        constructor(weight) {
+            this.weight = weight;
+        };
+        getWeight() {
+          return this.weight;
+        };
+        setWeight(value) {
+            this.weight = value;
+        };
+        decreaseWeight() {
+          this.weight--
+        };
+    };
+    class Human{
+        constructor(name,gender,weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+            this.message = "";
+        };
+        getName() {
+            return this.name;
+        };
+        setName(value) {
+            this.name = name;
+        };
+        getGender() {
+          return this.gender;
+        };
+        setGender(value) {
+            this.gender = value;
+        };
+        setWeight(value){
+            this.weight = value;
+        };
+        getWeigth() {
+           return this.weiight;
+        };
+        setMessage_(value){
+            this.message = value;
+        };
+        getMessage_(){
+            return this.message;
+        }
+        saySth() {
+           console.log(this.message);
+        };
+        checkApple(apple){
+            if (apple.weight>0){
+                return true;
+            }
+        };
+        eatApple(){
+            if (this.checkApple(apple)){
+                this.weight++;
+                apple.decreaseWeight();
+            };
+        };
+    };
+    let adam = new Human("adam","Male",40);
+    let eva = new Human("eva","Male",42);
+    let apple = new Apple(3);
+    adam.checkApple(apple);
+    adam.eatApple();
+    eva.eatApple();
+    adam.setMessage_("Hello");
+    alert(adam.message)
+    alert(adam.weight);
+    alert(eva.weight);
+
+
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DateClass</title>
+</head>
+<body>
+</body>
+<script>
+    class MyDate {
+        constructor(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        };
+
+        getDay() {
+            return this.day;
+        };
+
+        getMonth() {
+            return this.month;
+        };
+
+        getYear = function () {
+            return this.year;
+        };
+        setDay = function (value) {
+            this.day = value;
+        };
+        setMonth = function (value) {
+            this.month = value;
+        };
+        setYear = function (value) {
+            this.year = value;
+        };
+        toString = function () {
+              return this.day + "/" +this.month + "/" +this.year;
+        }
+
+    };
+    let date = new MyDate(11, 18, 2022);
+    let day = date.getDay()
+    document.write(date.toString());
+
+
+</script>
+</html>

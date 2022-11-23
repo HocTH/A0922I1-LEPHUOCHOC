@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rectangle</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1000" height="1000" style="border:1px solid #000000;">
+</canvas>
+</body>
+<script>
+    class rectangle {
+        constructor(length,width) {
+              this.length = length;
+              this.width = width;
+        };
+        getSquare = function () {
+             return this.length*this.width;
+        };
+        getPerimeter = function () {
+                return 2*(this.length+this.width);
+        };
+        getGraphic = function (){
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.moveTo(0, 0);
+            ctx.lineTo(this.length, 0);
+            ctx.stroke();
+            ctx.moveTo(this.length, 0);
+            ctx.lineTo(this.length,this.width);
+            ctx.stroke();
+            ctx.moveTo(this.length, this.width);
+            ctx.lineTo(0,this.width);
+            ctx.stroke();
+            ctx.moveTo(0, this.width);
+            ctx.lineTo(0,0);
+            ctx.stroke();
+
+        }
+    };
+let rectangle1 = new rectangle(700,200);
+rectangle1.getGraphic();
+</script>
+</html>

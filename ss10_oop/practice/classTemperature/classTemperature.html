@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>classTemperate</title>
+</head>
+<body>
+</body>
+<script>
+    class Temperature {
+        constructor(valueTemp) {
+            this.valueTemp = valueTemp;
+        };
+        getFah = function () {
+               return this.valueTemp*1.8+32;
+        };
+        getKelvin = function (){
+            return this.valueTemp+273.15;
+        }
+    };
+    let temperature1 = new Temperature(100);
+    alert("Fahrenheit: " + temperature1.getFah());
+    alert("Kelvin: " + temperature1.getKelvin());
+</script>
+</html>
