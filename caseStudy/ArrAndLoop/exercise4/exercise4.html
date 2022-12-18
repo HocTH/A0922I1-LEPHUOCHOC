@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>numberToString</title>
+</head>
+<body>
+<input type="number" id="1">
+<input type="button" onclick="get()" value="Change">
+<input type="button" onclick="reset()" value="Reset">
+<p id="result"> </p>
+</body>
+<script>
+    var numberToArr = [];
+    var result = [];
+    var numberArr = [ 0,1, 2, 3, 4, 5, 6, 7, 8, 9 ];
+    var numberStringArr = ["không","một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"]
+    function get() {
+        var numberString = document.getElementById("1").value;
+        for (let i = 0; i < numberString.length; i++) {
+            numberToArr[i] = +numberString[i];
+        }
+        ;
+        for (let i = 0; i < numberString.length; i++) {
+            var index = numberArr.indexOf(numberToArr[i]);
+            if (index != -1) {
+                result[i] = numberStringArr[index];
+                document.getElementById("result").innerHTML += result[i]+" ";
+            }
+        }
+    };
+    function reset() {
+        document.getElementById("result").innerHTML = ""
+    }
+
+</script>
+</html>

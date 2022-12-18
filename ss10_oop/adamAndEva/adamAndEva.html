@@ -10,74 +10,115 @@
     class Apple{
         constructor(weight) {
             this.weight = weight;
-        };
+        }
         getWeight() {
-          return this.weight;
+            return this.weight;//2
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
         };
-        setWeight(value) {
-            this.weight = value;
-        };
-        decreaseWeight() {
-          this.weight--
-        };
-    };
+
+        isEmpty() {
+            if(this.weight <= 0){
+                return true;
+            }else {
+                return false;
+            }
+        }
+
+        decreaseApple(){
+            if(this.isEmpty()){
+                alert("Táo đã hết rồi");
+            }else {
+                this.weight--;
+            }
+        }
+    }
+
     class Human{
         constructor(name,gender,weight) {
             this.name = name;
             this.gender = gender;
             this.weight = weight;
-            this.message = "";
-        };
-        getName() {
-            return this.name;
-        };
-        setName(value) {
-            this.name = name;
-        };
-        getGender() {
-          return this.gender;
-        };
-        setGender(value) {
-            this.gender = value;
-        };
-        setWeight(value){
-            this.weight = value;
-        };
-        getWeigth() {
-           return this.weiight;
-        };
-        setMessage_(value){
-            this.message = value;
-        };
-        getMessage_(){
-            return this.message;
         }
-        saySth() {
-           console.log(this.message);
-        };
-        checkApple(apple){
-            if (apple.weight>0){
+        getName(){
+            return this.name;
+        }
+        setName(name){
+            this.name = name;
+        }
+        getWeight(){
+            return this.weight;
+        }
+
+        isMale(){
+            if(this.gender == 1){
                 return true;
+            }else {
+                return false;
             }
-        };
-        eatApple(){
-            if (this.checkApple(apple)){
-                this.weight++;
-                apple.decreaseWeight();
-            };
-        };
-    };
-    let adam = new Human("adam","Male",40);
-    let eva = new Human("eva","Male",42);
-    let apple = new Apple(3);
-    adam.checkApple(apple);
-    adam.eatApple();
-    eva.eatApple();
-    adam.setMessage_("Hello");
-    alert(adam.message)
-    alert(adam.weight);
-    alert(eva.weight);
+        }
+        getGender(){
+            if(this.isMale()){
+                return "Male";
+            }else {
+                return "Female";
+            }
+        }
+
+        setWeight(weight){
+            this.weight = weight;
+        }
+
+        say(string) {
+            console.log(string);
+        }
+
+        checkApple(apple){
+            return apple.isEmpty();
+        }
+
+        eat(apple){
+            if(apple.getWeight() > 0){
+                apple.decreaseApple(); //1
+                this.weight++; //66
+            }else {
+                alert("Táo đã hết");
+            }
+        }
+
+        getInfo(human){
+            alert(human.name + " " +human.weight + " " +human.getGender());
+        }
+    }
 
 
+    let adam = new Human("adam", 1, 65);
+    let eva = new Human("eva", 2, 55);
+    let apple_1 = new Apple(10);
+
+
+    // adam.checkApple(apple_1)
+    adam.say("I am Adam" + "<br>");
+    eva.say("I am Eva" + "<br>");
+
+
+    while (apple_1.isEmpty() !== true) {
+        document.write("Adam ăn táo" + "<br>");
+        adam.eat(apple_1);
+
+        document.write("Quả táo còn: " + "<br>");
+        document.write(apple_1.getWeight() + " đơn vị" + "<br>");
+        document.write( "Cân nặng của Adm là: " + adam.getWeight() + " đơn vị" + "<br>");
+
+        document.write("<br>")
+
+        document.write("Eva ăn táo" + "<br>");
+        eva.eat(apple_1);
+
+        document.write("Quả táo còn: " + "<br>");
+        document.write(apple_1.getWeight() + " đơn vị" + "<br>");
+        document.write( "Cân nặng là: " + eva.getWeight() + " đơn vị" + "<br>");}
 </script>
 </html>

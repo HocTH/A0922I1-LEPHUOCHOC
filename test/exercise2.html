@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>countUpperChar</title>
+</head>
+<body>
+</body>
+<script>
+    let stringcheck = prompt("Input the String");
+    let arrChar = "QWERTYUIOPASDFGHJKLZXCVBNM"
+    let count = 0;
+    function check(arr) {
+        for (let i = 0; i <arr.length ; i++) {
+            if (arrChar.indexOf(arr[i]) !== -1){
+                count++
+            }
+        };
+        if (count !==0){
+            alert("Upper char: " +count);
+        } else {
+            alert(" The String is not contain upper char")
+        }
+    };
+    check(stringcheck);
+
+</script>
+</html>

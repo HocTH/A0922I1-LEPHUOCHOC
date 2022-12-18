@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sortNum</title>
+</head>
+<body>
+</body>
+<script>
+    let totalOfElementA;
+    let totalOfElementB;
+    let arrNum=[];
+    let arrNum1=[];
+    do {
+        totalOfElementA = +prompt("Input the total element in array A :");
+        if (totalOfElementA>0 && !isNaN(totalOfElementA)&&Number.isInteger(totalOfElementA)) {
+            break;
+        }
+    } while (true);
+    let num;
+    do {
+        num = +prompt("Input the element in array A :");
+        if (num>0 && !isNaN(num)&&Number.isInteger(num)) {
+            arrNum.push(num);
+            totalOfElementA--
+        };
+    }while (totalOfElementA!==0);
+
+    do {
+        totalOfElementB = +prompt("Input the total element in array B :");
+        if (totalOfElementB>0 && !isNaN(totalOfElementB)&&Number.isInteger(totalOfElementB)) {
+            break;
+        }
+    } while (true);
+    do {
+        num = +prompt("Input the element in array B :");
+        if (num>0 && !isNaN(num)&&Number.isInteger(num)) {
+            arrNum1.push(num);
+            totalOfElementB--
+        };
+    }while (totalOfElementB!==0);
+let missingArr =[];
+    for (let i = 0; i <arrNum1.length ; i++) {
+        if (arrNum.indexOf(arrNum1[i])===-1 &&missingArr.indexOf(arrNum1[i]) ){
+            missingArr.push(arrNum1[i]);
+        }
+    };
+    alert("A "+ "["+arrNum+"] " +"and "+ "B"+ "["+arrNum1+"]"+"\n Missing Array"+
+        "["+missingArr+"]")
+</script>
+</html>

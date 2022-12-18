@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>arrNum</title>
 </head>
 <body>
-$END$
 </body>
+<script>
+    var arr = [];
+    var i = 0;
+    do {
+        var inputnum = +prompt("Input the number to reverse");
+        arr[i] = inputnum;
+         var signal = confirm("Do you want to continue input the number?")
+        i++
+    }while (signal)
+
+    function reverse(arr) {
+        var arrReverse = arr.reverse();
+        return arrReverse;
+    };
+    alert("Arr before reverse "+ arr);
+    alert("Arr after reverse "+ reverse(arr));
+</script>
 </html>

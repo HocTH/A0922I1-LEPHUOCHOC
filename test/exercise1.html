@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>subArr</title>
+</head>
+<body>
+</body>
+<script>
+    let arrNum =[];
+    let oddNumber = 0;
+    let evenNumber=0;
+    let result;
+    let lengthArr;
+    let elementOfArr
+    do {
+        lengthArr = +prompt("Input the length of array")
+        if (lengthArr>0&& lengthArr<=20&& !isNaN(lengthArr)&&Number.isInteger(lengthArr)){
+            break;
+        }
+    } while (true)
+    do {
+        elementOfArr = +prompt("Input the number in the Array");
+        if (elementOfArr >0&&Number.isInteger(elementOfArr)&& !isNaN(elementOfArr)){
+            arrNum.push(elementOfArr);
+            lengthArr--;
+        }
+    } while (lengthArr !== 0)
+    for (const element of arrNum) {
+        console.log(element)
+        if (element %2 ===0){
+            evenNumber += element;
+        }else {
+            oddNumber += element;
+        }
+        result = evenNumber-oddNumber;
+    };
+    alert("Arr is:" + "["+arrNum+"]"+"\nResult: " + result)
+</script>
+</html>

@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>checkNumber</title>
 </head>
 <body>
-$END$
 </body>
+<script>
+    var num = +prompt("Input number to check");
+    function checkNum(num) {
+        if (!isNaN(num)){
+            alert(true);
+        } else {
+            alert(false);
+        }
+    };
+    checkNum(num);
+</script>
 </html>

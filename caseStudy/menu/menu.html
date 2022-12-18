@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>menu</title>
+    <style>
+        .container{
+            /*background-color: red;*/
+            margin: auto;
+            width: 50%;
+        }
+        .title{
+            display: block;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 20px 0 20px 0;
+        }
+        table{
+            width: 100%;
+        }
+        th{
+            background-color: aqua;
+        }
+       th, td {
+            padding: 5px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="products">
+        <div class="title"> Danh muc hang hoa</div>
+        <table class="productList">
+            <thead>
+            <tr>
+                <th>Mã</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>&nbsp&nbsp</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Cafe</td>
+                <td>$ <span class="amount">300</span></td>
+                <td><button type="button"onclick="addToCart(this)"> Thêm</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Cam vat</td>
+                <td>$ <span class="amount">400</span></td>
+                <td><button type="button"onclick="addToCart(this)"> Thêm</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Nuoc ep ca rot</td>
+                <td>$ <span class="amount">500</span></td>
+                <td><button type="button"onclick="addToCart(this)"> Thêm</button></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Nuoc ep ca chua</td>
+                <td>$ <span class="amount">600</span></td>
+                <td><button type="button"onclick="addToCart(this)"> Thêm</button></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Nuoc loc</td>
+                <td>$ <span class="amount">700</span></td>
+                <td><button type="button"onclick="addToCart(this)"> Thêm</button></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Nuoc dua</td>
+                <td>$ <span class="amount">600</span></td>
+                <td><button type="button"onclick="addToCart(this)"> Thêm</button></td>
+            </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <div class="shopping-cart">
+        <div class="title"> Giỏ hàng của bạn</div>
+        <table id="cartItems" class="cart-item" style="display: none">
+            <thead>
+            <tr>
+                <th>Mã </th>
+                <th>Tên</th>
+                <th>Giá</th>
+                <th>&nbsp&nbsp</th>
+            </tr>
+            </thead>
+            <tbody id="cart-body">
+            </tbody>
+        </table>
+        <div id="grandTotal" class="grandTotal" style="display: none">
+               Tổng tiền: $ <span id="total">400</span>
+        </div>
+        <div id="emptyCart" class="emptyCart">
+               Bạn chưa chọn mặt hàng nào.
+        </div>
+
+
+    </div>
+</div>
+</body>
+<script>
+    function addToCart(btn) {
+        const trNode = btn.parentElement.parentElement;
+        const trNodeClone = trNode.cloneNode(true);
+        const btnAdd = trNodeClone.getElementsByTagName('button');
+        btnAdd[0].innerText = 'Xoa';
+        btnAdd[0].setAttribute('onclick','removeCartItem(this)');
+        const cartBody = document.getElementById("cart-body");
+        cartBody.appendChild(trNodeClone);
+        const cartTable = document.getElementById("cartItems");
+        cartTable.style.display = "table";
+        const emptyCart = document.getElementById('emptyCart');
+        emptyCart.style.display = 'none';
+        const grandTotal = document.getElementById("grandTotal");
+        grandTotal.style.display = "block";
+        calculateGrandTotal()
+    };
+    function removeCartItem(btn) {
+        const trNode = btn.parentElement.parentElement;
+        const tbodyNode = trNode.parentElement;
+        tbodyNode.removeChild(trNode);
+        if(tbodyNode.children.length <=0){
+            const cartTable = document.getElementById("cartItems");
+            cartTable.style.display = "none";
+            const  emptyCart = document.getElementById("emptyCart");
+            emptyCart.style.display = "block";
+            const grandTotal = document.getElementById("grandTotal");
+            grandTotal.style.display = "none";
+            grandTotal.childNodes[1].innerText = "0";
+        }
+        calculateGrandTotal()
+    }
+    function calculateGrandTotal() {
+        const cartItemsTable = document.getElementById("cartItems");
+        const amountSpans = cartItemsTable.getElementsByClassName('amount');
+        let total = 0;
+        for (const element of amountSpans) {
+            total += Number(element.innerText)
+        }
+        const totalSpan = document.getElementById('total');
+        totalSpan.innerText = total;
+    }
+</script>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>maxAndMin</title>
+</head>
+<body>
+</body>
+<script>
+    let height;
+    let width;
+    let matrix = [];
+    let max = -Infinity;
+    let min = +Infinity;
+
+    function minAndMax() {
+        do {
+            height = +prompt("Input the row.");
+        } while (isNaN(height) || height < 0 || !Number.isInteger(height));
+        do {
+            width = +prompt("Input the column.");
+        } while (isNaN(width) || width < 0 || !Number.isInteger(width));
+
+        for (let i = 0; i < height; i++) {
+            matrix[i] = [];
+            for (let j = 0; j < width; j++) {
+                let elementMatrix;
+                do {
+                    elementMatrix = +prompt("Input the value a[" + i + "]" + "[" + j + "]");
+                    matrix[i][j] = elementMatrix;
+                } while (isNaN(elementMatrix) || !Number.isInteger(elementMatrix));
+                if (max < matrix[i][j]) {
+                    max = matrix[i][j];
+                }
+                ;
+                if (min > matrix[i][j]) {
+                    min = matrix[i][j];
+                }
+                ;
+            }
+            ;
+        }
+        ;
+        alert("Arr: " + matrix + "\nthe max: " + max + "\nthe min: " + min);
+    }
+minAndMax()
+
+</script>
+</html>

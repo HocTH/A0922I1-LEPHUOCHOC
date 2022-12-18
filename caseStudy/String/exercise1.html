@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stringChange</title>
+</head>
+<body>
+</body>
+<script>
+    var stringBefore = prompt("Input the string to change");
+    function changeString(stringBefore) {
+         var arr = stringBefore.split(" ");
+         var kq = "",tmp;
+        for (let i = 0; i <arr.length ; i++) {
+           tmp = arr[i].trim().toLowerCase();
+           if (tmp != ""){
+               tmp = tmp.charAt(0).toUpperCase() +tmp.slice(1);
+               kq += tmp +" ";
+           }
+        };
+        console.log(kq);
+    };
+    changeString(stringBefore);
+</script>
+</html>

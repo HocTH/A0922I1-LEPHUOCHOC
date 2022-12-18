@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sumInArr</title>
+</head>
+<body>
+</body>
+<script>
+    var m = +prompt("Input m");
+    var n = +prompt("Input n");
+    function sumArr(m,n) {
+       var arr = [];
+
+        for (let i = 0; i <m ; i++) {
+             arr[i] = [];
+            for (let j = 0; j <n ; j++) {
+                arr[i][j] = +prompt("Input element in arr")
+            }
+        };
+        return arr;
+    };
+    function sum2(){
+        var sum =0;
+        var arr = sumArr(m,n);
+        for (let i = 0; i < m ; i++) {
+            for (let j = 0; j <n ; j++) {
+                if (arr[i][j] %2 ==0){
+                    sum += arr[i][j];
+                }
+            }
+        }
+        console.log(sum)
+    };
+sum2();
+</script>
+</html>

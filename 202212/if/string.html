@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VowelCheck</title>
+</head>
+<body>
+</body>
+<script>
+    let vowelString = "ouiae";
+    let symbol ="";
+    do {
+          symbol = prompt("Input the string ");
+          if (isNaN(symbol)&& symbol.length===1){
+              break;
+          }
+    }while (true);
+    function check(value) {
+        let tmp = value.toLowerCase();
+        if (vowelString.indexOf(tmp)!==-1){
+            alert(symbol+ " is vowel");
+        } else {
+            alert(symbol+ " is not vowel");
+        }
+    };
+    check(symbol);
+</script>
+</html>

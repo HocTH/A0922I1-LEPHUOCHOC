@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>twoNumber</title>
 </head>
 <body>
-$END$
 </body>
+<script>
+
+    var arr = [];
+    for (let i = 0; i <2 ; i++) {
+        var numInput = +prompt("Input number");
+        arr[i] = numInput;
+    };
+    function reverse(num1,num2) {
+        var  arrTemp=[];
+        arrTemp[0] = arr[1] ;
+        arrTemp[1] = arr[0];;
+        return arrTemp;
+    };
+    alert("Arr before reverse "+ arr);
+    alert("Arr after reverse "+ reverse());
+
+</script>
 </html>

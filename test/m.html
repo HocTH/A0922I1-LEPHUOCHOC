@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cart</title>
+</head>
+<style>
+    button{
+        color: black;
+        background-color: blue;
+    }
+    table,td,th{
+        border: 1px solid;
+    }
+    table{
+        border-collapse: collapse;
+    }
+</style>
+<body>
+<h3>Add New Product</h3>
+<input type="text" id="name">
+<button onclick="add()"> Add</button><br>
+<h3>Display All Product</h3>
+<p id="display"></p>
+</body>
+<script>
+    class Product {
+        constructor(name) {
+            this.name = name;
+        };
+        getName(){
+            return this.name;
+
+        };
+        setName(value){
+            this.name = value;
+        };
+    };
+    let arr = [];
+    let tinh = new Product("apple");
+    arr.push(tinh);
+    function display() {
+        let result = "<table>" + "<tr>" +"<th> No.</th>" + "<th> Product Name</th>" + "<th colspan=\"2\">Action</th>\n" + "</tr>";
+        for (let i = 0; i <arr.length ; i++) {
+            result += "<tr>"+"<td>" +(i+1)+"</td>"
+                +"<td>"+arr[i].getName()+"</td>"
+                +"<td>" +"<input type='button' id='Edit' value='Edit' onclick='edit("+i+")'>"+"</td>"
+                +"<td>" +"<input type=\"button\" id=\"remove\" value=\"Remove\" onclick=\"remove("+i+")\">"+"</td>"
+                +"</tr>";
+        };
+        result += "</table>"
+        document.getElementById("display").innerHTML = result;
+    }
+    display();
+    function add() {
+        let nameProduct =  new Product(document.getElementById("name").value);
+        arr.push(nameProduct);
+        alert("You add successfully.")
+        display();
+    }
+    function edit(value) {
+        let name = prompt("Input name");
+        arr[value].setName(name);
+        alert("You edit successfully.")
+        display();
+    };
+    function remove(value) {
+        let confirmValue = confirm("Do you want to remove " +arr[value].getName() +" ?" )
+        if (confirmValue){
+            arr.splice(value,1);
+            alert("You remove successfully.")
+        }else {
+            alert("You don't want to remove.")
+        }
+        display();
+    }
+
+</script>
+</html>

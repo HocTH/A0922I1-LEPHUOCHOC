@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyen doi giua feet va meter</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th style="text-align: center">feet</th>
+        <td></td>
+        <th style="text-align: center"> meter</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="feet"></td>
+        <td><input type="button" value="=" onclick="change()"></td>
+        <td><input type="text" id="meter"></td>
+    </tr>
+</table>
+<script>
+    function feetToMeter(feet) {
+        return 0.305 * feet
+    }
+
+    function meterToFeet(meter) {
+        return 3.279 * meter
+    }
+
+    function change() {
+        var meter = +document.getElementById("meter").value;
+        var feet = +document.getElementById("feet").value;
+        let result;
+        if (feet > 0 && meter === 0) {
+            result = feetToMeter(feet)
+            document.getElementById("meter").value = result;
+        } else if (meter > 0 && feet === 0) {
+            result = meterToFeet(meter)
+            document.getElementById("feet").value = result;
+        } else {
+            alert("nhập không hợp lệ")
+        }
+    }
+
+
+</script>
+</body>
+</html>

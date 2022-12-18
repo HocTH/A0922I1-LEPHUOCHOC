@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>numeratorsAndDenominators</title>
+</head>
+<body>
+</body>
+<script>
+    var numerators = [];
+    var denominators = [];
+    var devisionArr = [];
+    var arrLength = +prompt("Input array length.");
+    for (let i = 0; i < arrLength ; i++) {
+        numerators[i] = +prompt("Input elements in numerators");
+    };
+    for (let i = 0; i < arrLength ; i++) {
+        denominators[i] = +prompt("Input elements in denominators");
+    };
+    for (let i = 0; i < arrLength ; i++) {
+        devisionArr[i] = (numerators[i]/denominators[i]).toFixed(2);
+    };
+    for (let i = 0; i <arrLength ; i++) {
+        var max = devisionArr[0];
+        if (max < devisionArr[i] & !Number.isNaN(devisionArr[i])){
+            max = devisionArr[i];
+        };
+    };
+    var index = devisionArr.indexOf(max);
+    document.write("the max fraction : "+ numerators[index]+"/"+ denominators[index] +" index of in arr "+ index+ "<br>")  ;
+    document.write(numerators + "<br>");
+    document.write(denominators + "<br>");
+
+</script>
+</html>

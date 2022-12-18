@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sum</title>
+</head>
+<body>
+</body>
+<script>
+    let totalEle;
+    let arrNum = [];
+    let arrPrime = [];
+    do {
+        totalEle = +prompt("Input the total of array")
+        if (!isNaN(totalEle)&& totalEle>0 && totalEle <=50 && Number.isInteger(totalEle)){
+            break;
+        }
+    }while (true);
+    let num;
+    do {
+        num = +prompt("Input the number")
+        if (!isNaN(num) && Number.isInteger(num)){
+            arrNum.push(num);
+            totalEle--;
+        }
+    }while (totalEle !==0);
+    for (let i = 0; i < arrNum.length ;i++  ) {
+        if (arrNum[i]%2 !==0 && i%2 === 0){
+            arrPrime.push(arrNum[i]);
+        };
+    };
+    let sum =0;
+    for (let i = 0; i <arrPrime.length ; i++) {
+        sum += arrPrime[i];
+    };
+    let result = sum/arrPrime.length;
+    alert("["+ arrNum+"]"+"\n Result: " +result)
+</script>
+</html>

@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>positiveInteger</title>
 </head>
 <body>
-$END$
 </body>
+<script>
+    var checkNum = +prompt("Input number to check.");
+    function check(num) {
+        if (Number.isInteger(num) && num>0){
+            alert(" Number is " + true);
+        } else {
+            alert(" Number is " + false);
+        }
+    };
+    check(checkNum);
+</script>
 </html>

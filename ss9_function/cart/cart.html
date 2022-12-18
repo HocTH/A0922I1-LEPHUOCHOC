@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>cart</title>
 </head>
 <body>
-$END$
+<h3>Add New Product</h3>
+<input type="text" id="product" placeholder="New Product">
+<input type="button" id="add" value="Add" onclick="add()">
+<h3>Display All Product</h3>
+<p id="result"></p>
 </body>
+<script>
+    var productList = ["Sony Xperia","Samsung Galaxy","Nokia 6",
+    "Xiaomi Redmi Note 4", "Apple iPhone 6S","Xiaomi Mi 5s Plus","Apple iPhone 8 Plus","Fujitsu F-04E","Oppo A71"
+    ];
+    var result = [];
+
+    function add() {
+        var addElement = document.getElementById("product").value;
+        result.push(addElement);
+        var data1="";
+        for (let i = 0; i < result.length ; i++) {
+            data1 = data1 +"<tr>"+"<td>"+ result[i]+"</td>"+"<td>"+"<input type='button' value='edit'>"+"</td>"
+                +"<td>"+"<input type='button' value='delete' onclick='deleteText()'>"+"</td>"+"</tr>"
+        };
+        document.getElementById("result").innerHTML = "<table>"+data1+"</table>"
+    };
+   function deleteText() {
+       result.splice(1,1);
+       document.getElementById("result").innerHTML = "<table>"+data1+"</table>"
+   }
+
+</script>
 </html>

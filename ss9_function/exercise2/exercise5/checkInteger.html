@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>checkInteger</title>
 </head>
 <body>
-$END$
 </body>
+<script>
+    do {
+        var firstNum = +prompt("Input first number to compare")
+        if (Number.isInteger(firstNum)){
+            do {
+                var secondNumber = +prompt("Input second number to compare")
+                if (Number.isInteger(secondNumber)){
+                    do {
+                        var thirdNumber = +prompt("Input third number to compare")
+                    } while (!Number.isInteger(thirdNumber))
+                }
+
+            }while (!Number.isInteger(secondNumber) )
+        }
+    }while (!Number.isInteger(firstNum) )
+    if (firstNum>secondNumber && firstNum>thirdNumber){
+        alert(firstNum + " is biggest number " );
+    }else {
+        if (secondNumber> thirdNumber){
+            alert(secondNumber + " is biggest number " );
+        } else {
+            alert(thirdNumber + " is biggest number " );
+        }
+    }
+</script>
 </html>

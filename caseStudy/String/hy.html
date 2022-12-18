@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 1</title>
+</head>
+<body>
+</body>
+<script>
+    function validateName(name) {
+        //    lUu  hOa
+        name = name.trim().toLowerCase(); //luu hoa
+        let replaceName = "";
+        for (let i = 0; i < name.length; i++) {
+            if (name.charAt(i) === " " && name.charAt(i + 1) === " ") {
+                // continue;
+            }
+            if (name.charAt(i - 1) === " " || i === 0) {
+                replaceName += name.charAt(i).toLocaleUpperCase();
+                // continue;
+            }
+            replaceName += name.charAt(i)
+        }
+        return name = replaceName;
+    }
+
+    function checkMaxLength(name){
+        let temp = name.split(" ");
+        let maxIndex = 0;
+        for (let i = 1; i < temp.length; i++) {
+            if (temp[maxIndex].length < temp[i].length){
+                maxIndex = i;
+            }
+        }
+        return temp[maxIndex];
+    }
+
+    let name =" tinh    nnn";
+    let validatedName = validateName(name);
+    let wordMaxLengthInString = checkMaxLength(validatedName);
+    alert("Name before validate: " + name + "\nValidated name:" + validatedName + "\nWord has max length: " + wordMaxLengthInString);
+
+</script>
+</html>

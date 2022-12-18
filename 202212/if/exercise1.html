@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let salary;
+    let taxOver15mil = 0.2;
+    let taxFrom7to15mil = 0.1;
+    let taxUnder7mil = 0.5
+    do {
+        salary = +prompt("Input the salary")
+        if (!isNaN(salary)&& salary>0&& Number.isInteger(salary)){
+            break
+        }
+    } while (true);
+    function taxCheck(value) {
+         let tax=0;
+         let netGross=0;
+          if (value>15000000){
+              tax = value*taxOver15mil;
+          } else if (value>=7000000 && value<=150000000){
+              tax = value*taxFrom7to15mil;
+          }else {
+              tax = value*taxUnder7mil;
+          }
+          netGross = value-tax;
+          alert("Salary Gross : " + value +"\n Tax:" +tax+"\n Net Salary:  "+netGross);
+    }
+    taxCheck(salary);
+</script>
+</html>

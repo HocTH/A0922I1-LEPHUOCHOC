@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lí sách</title>
+</head>
+<style>
+    button{
+        color: black;
+        background-color: blue;
+    }
+    table,td,th{
+        border: 1px solid;
+    }
+    table{
+        border-collapse: collapse;
+    }
+</style>
+<body>
+<h1 style="alignment: center">Quản lí sách</h1>
+<p id="display"></p>
+<br>
+<button onclick="AddOldBook()">Thêm sách đã có</button>
+<button onclick="AddNewBook()">Thêm sách mới</button>
+<button onclick="brownBook()">Mượn sách</button>
+<button onclick="displayTheMostBook()">Hiển thị sách nhiều nhất</button>
+</body>
+<script>
+    let result;
+    class Book {
+        constructor(idBook, nameBook, year, numbers, status) {
+            this.idBook = idBook;
+            this.nameBook = nameBook;
+            this.year = year;
+            this.numbers = numbers;
+            this.status = status;
+        }
+
+        getIdBook() {
+            return this.idBook;
+        }
+
+        getNameBook() {
+            return this.nameBook;
+        }
+
+        getYear() {
+            return this.year;
+        }
+
+        getNumbers() {
+            return this.numbers;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        setIdBook(IdBook) {
+            this.idBook = IdBook;
+        }
+
+        setNameBook(nameBook) {
+            this.nameBook = nameBook;
+        }
+
+        setYear(year) {
+            this.year = year;
+        }
+
+        setNumbers(numbers) {
+            this.numbers = numbers;
+        }
+
+        setStatus(status) {
+            this.status = status;
+        }
+    };
+    let arrBook =[];
+    let mathBook = new Book("12345","Toán",2000,3,true);
+    arrBook.push(mathBook);
+    function display() {
+        result = "<table>"+"<tr>"+"<th>Mã số sách</th>"+"<th>Tên sách</th>"+"<th>Năm xuất bản</th>"+"<th>Số quyển</th>"+"<th>Tình trạng</th>" +"</tr>";
+        for (let i = 0; i <arrBook.length ; i++) {
+            result += "<tr>"+"<th>"+arrBook[i].getIdBook()+"</th>"+"<th>"+arrBook[i].getNameBook()+"</th>"+"<th>"+arrBook[i].getYear()+"</th>"+"<th>"+arrBook[i].getNumbers() +"</th>"+"<th>"+arrBook[i].getStatus() +"</th>"+"</tr>"
+        }
+        result += "</table>"
+        document.getElementById("display").innerHTML = result;
+    }
+    display()
+function AddNewBook() {
+    let idBook = prompt("Input the id of the book");
+    let nameBook = prompt("Input the name of the book");
+    let year = prompt("Input the year of the book");
+    let numbers = prompt("Input the quanity of the book");
+    let status = prompt("Input the status of the book")
+    let book = new Book(idBook,nameBook,year,numbers,status);
+    arrBook.push(book);
+    display();
+};
+</script>
+</html>

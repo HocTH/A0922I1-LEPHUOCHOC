@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 6</title>
+    <style>
+        input{
+            width: 70px;
+            margin-right: 5px;
+            height: 23px;
+            margin-bottom: 10px;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<h3>Xổ số CodeGym</h3>
+<p id="bangSo"></p>
+<p id="veSoNgayNhien"></p>
+<br>
+<button id="muaVe" onclick="chonVe()">Mua vé</button>
+<button id="ketQua" onclick="kiemTraKetQua()">Xem kết quả</button>
+<p id="ketQuaXoSo" style="font-size: 20px"></p>
+</body>
+<script>
+    let mang = [];
+    let soVeSoDaChon = 0
+    let ketQua = ['01','12','23','34','45','56']
+    let giaiThuongVeSo = ['1 Tỷ VNĐ', '500 Triệu VNĐ', '100 Triệu VNĐ'];
+
+
+    class VeSo{
+        constructor(so1,so2,so3,so4,so5,so6) {
+            this.so1 = so1;
+            this.so2 = so2;
+            this.so3 = so3;
+            this.so4 = so4;
+            this.so5 = so5;
+            this.so6 = so6;
+        }
+        nhapVeSo(){
+            mang.push(this.so1);
+            mang.push(this.so2);
+            mang.push(this.so3);
+            mang.push(this.so4);
+            mang.push(this.so5);
+            mang.push(this.so6);
+        }
+    }
+
+
+    function kiemTraKetQua(){
+        if (mang.length > 1){
+            document.getElementById('ketQuaXoSo').innerHTML = `Kết quả xổ số là: ${ketQua.join('-')}.`;
+            let length, check, viTri = mang.length-1, trungGiai,thongBaoKetQua = '';
+            if (mang.length > 18){
+                length = 4;
+            } else if (mang.length > 12){
+                length = 3;
+            } else if (mang.length > 6){
+                length = 2;
+            } else {
+                length = 1;
+            }
+            for (let i = length; i > 0; i--){
+                check = 0;
+                trungGiai = 0
+                for (let j = 5; j >= 0; j--){
+                    if (mang[viTri] === ketQua[j]){
+                        check++;
+                    }
+                    if (j == 3 && check == 3){
+                        trungGiai = 3;
+                    }
+                    if (j == 1 && check == 5){
+                        trungGiai = 2;
+                    }
+                    if (j == 0 && check == 6){
+                        trungGiai = 1
+                    }
+                    viTri--;
+                }
+                switch (trungGiai) {
+                    case 1: thongBaoKetQua += `Vé số ${i}: Bạn đã trúng 1 giải nhất. Giá tri là ${giaiThuongVeSo[0]}.\n`; break;
+                    case 2: thongBaoKetQua += `Vé số ${i}: Bạn đã trúng 1 giải nhì. Giá tri là ${giaiThuongVeSo[1]}.\n`;break;
+                    case 3: thongBaoKetQua += `Vé số ${i}: Bạn đã trúng 1 giải khuyến khích. Giá tri là ${giaiThuongVeSo[2]}.\n`; break;
+                    default: thongBaoKetQua += `Vé số ${i}: Chúc bạn may mắn lần sau!\n`;
+                }
+            };
+            console.log(mang);
+            alert(`Thông báo kết quả vé số của bạn:\n${thongBaoKetQua}`);
+        } else {
+            alert('Vui lòng mua vé!');
+        }
+    }
+
+
+    function daChonVe() {
+        let so1, so2, so3,so4,so5,so6;
+        so1 = document.getElementById('so1');
+        so2 = document.getElementById('so2');
+        so3 = document.getElementById('so3');
+        so4 = document.getElementById('so4');
+        so5 = document.getElementById('so5');
+        so6 = document.getElementById('so6');
+
+        if (so1.value.length == 2 && so2.value.length == 2 && so3.value.length == 2 && so4.value.length == 2 && so5.value.length == 2 && so6.value.length == 2){
+            if (isNaN(so1.value) || isNaN(so2.value) || isNaN(so3.value) || isNaN(so4.value) || isNaN(so5.value) || isNaN(so6.value)){
+                alert('Số vé không được chứa chữ hay ký tự đặc biệt.\nVui lòng nhập lại số vé!');
+            } else {
+                if (soVeSoDaChon + 1 > 4){
+                    alert('Chỉ có thể mua tối đa 4 vé số. Vui lòng xem kết quả!')
+                } else {
+                    let veSO = new VeSo(so1.value, so2.value, so3.value, so4.value, so5.value, so6.value);
+                    veSO.nhapVeSo();
+                    soVeSoDaChon++;
+                    alert(`Chọn vé thành công. Tổng số vé đã chọn là ${soVeSoDaChon}`);
+                }
+            }
+        } else {
+            alert('Vui lòng nhập 2 chữ số!');
+        };
+    };
+    function veSoNgauNhien() {
+        let so1 =  String(Math.floor(Math.random() * 100));
+        let so2 =  String(Math.floor(Math.random() * 100));
+        let so3 =  String(Math.floor(Math.random() * 100));
+        let so4 =  String(Math.floor(Math.random() * 100));
+        let so5 =  String(Math.floor(Math.random() * 100));
+        let so6 =  String(Math.floor(Math.random() * 100));
+
+        if (so1.length == 1){
+            so1 = '0' + so1;
+        }
+        if (so2.length == 1){
+            so2 = '0' + so2;
+        }
+        if (so3.length == 1){
+            so3= '0' + so3;
+        }
+        if (so4.length == 1){
+            so4 = '0' + so4;
+        }
+        if (so5.length == 1){
+            so5 = '0' + so5;
+        }
+        if (so6.length == 1){
+            so6 = '0' + so6;
+        }
+
+        if (document.getElementById('so1') === null){
+            bangNhapVeSo = `<input type="text" id="so1"><input type="text" id="so2"><input type="text" id="so3"><input type="text" id="so4"><input type="text" id="so5"><input type="text" id="so6"><button onclick="daChonVe()">Chọn vé</button><br>`;
+            document.getElementById('bangSo').innerHTML = bangNhapVeSo;
+        }
+        document.getElementById('so1').value = so1;
+        document.getElementById('so2').value = so2;
+        document.getElementById('so3').value = so3;
+        document.getElementById('so4').value = so4;
+        document.getElementById('so5').value = so5;
+        document.getElementById('so6').value = so6;
+    }
+
+
+    let bangNhapVeSo = '';
+
+    function chonVe() {
+        document.getElementById('ketQuaXoSo').innerHTML = '';
+        let chonVe;
+        do{
+            chonVe = prompt('Bạn có 2 lựa chọn:\n1.Bạn muốn tự chọn số.\n2. Hệ thống tự random.');
+            if (chonVe != 1 && chonVe != 2){
+                alert('Bạn nhập vào chưa đúng. Vui lòng nhập lại!');
+            } else {
+                chonVe = Number(chonVe);
+            }
+        } while ( chonVe !== 1 && chonVe !== 2);
+
+        if (chonVe === 2){
+            veSoNgauNhien();
+        } else if (chonVe === 1) {
+            bangNhapVeSo = `<input type="text" id="so1"><input type="text" id="so2"><input type="text" id="so3"><input type="text" id="so4"><input type="text" id="so5"><input type="text" id="so6"><button onclick="daChonVe()">Chọn vé</button><br>`;
+            document.getElementById('bangSo').innerHTML = bangNhapVeSo;
+        } else {
+            console.log('Lỗi nhập vé số. Bạn vui lòng nhập lại!');
+        }
+    }
+</script>
+</html>

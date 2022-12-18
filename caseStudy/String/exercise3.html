@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mixArr</title>
+</head>
+<body>
+</body>
+<script>
+    var a = prompt("Input the string 1");
+    var b = prompt("Input the string 2")
+    function commonCharacterCount(str1,str2) {
+        let arr1 = str1.split('');
+        let arr2 = str2.split('');
+        let result = [];
+        for (let i = 0; i <arr1.length ; i++) {
+            if(arr2.indexOf(arr1[i]) !== -1){
+                result.push(arr1[i]);
+                arr2.splice(arr2.indexOf(arr1[i]),1);
+            }
+        }
+        return console.log(result.length);
+    }
+    commonCharacterCount(a,b);
+</script>
+</html>

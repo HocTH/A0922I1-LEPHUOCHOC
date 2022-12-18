@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>minMax</title>
+</head>
+<body>
+</body>
+<script>
+    var m = +prompt("Input m");
+    var n = +prompt("Input n");
+
+    function numberArr(m, n) {
+        var arr = [];
+        for (let i = 0; i < m; i++) {
+            arr[i] = [];
+            for (let j = 0; j < n; j++) {
+                arr[i][j] = +prompt("Input element in arr")
+            }
+        }
+        ;
+        return arr;
+    };
+    function maxArr() {
+        var arr = numberArr(m, n);
+        var max = arr[0][0];
+
+        for (let i = 0; i < m; i++) {
+            for (let j = 0; j < n; j++) {
+                if (max < arr[i][j]){
+                    max = arr[i][j];
+                }
+            }
+        }
+        document.write("Max number :  " + max+"<br>")
+    }
+    function minArr() {
+        var arr = numberArr(m, n);
+        var min = arr[0][0];
+
+        for (let i = 0; i < m; i++) {
+            for (let j = 0; j < n; j++) {
+                if (min > arr[i][j]){
+                    min = arr[i][j];
+                }
+            }
+        }
+        document.write("Min number :  " + min+"<br>")
+    };
+    minArr();
+    maxArr();
+</script>
+</html>

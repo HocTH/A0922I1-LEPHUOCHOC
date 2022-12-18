@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prefix</title>
+</head>
+<body>
+</body>
+<script>
+    let arrNum=[];
+    let prefixArr=[];
+    let totalOfElement;
+    do {
+        totalOfElement = +prompt("Input the total element in array :");
+        if (totalOfElement<=20 &&totalOfElement>0 && !isNaN(totalOfElement)&&Number.isInteger(totalOfElement)) {
+            break;
+        }
+    } while (true);
+    let num;
+    do {
+        num = +prompt("Input the element in array :");
+        if (num>0 && !isNaN(num)&&Number.isInteger(num)) {
+            arrNum.push(num);
+        };
+        totalOfElement--
+    }while (totalOfElement!==0);
+          let sum=0;
+    for (let i = 0; i <arrNum.length ; i++) {
+          sum += arrNum[i];
+          console.log(sum);
+        prefixArr.push(sum);
+    }
+    alert("["+arrNum+"]"+ "\n result" +"["+prefixArr+"]");
+</script>
+</html>

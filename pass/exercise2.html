@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số thân thiết</title>
+</head>
+<body>
+<script>
+    let num1;
+    do {
+        num1 = +prompt("Input the first number")
+        if (!isNaN(num1)&& num1>0  && Number.isInteger(num1)){
+            break;
+        }
+    }while (true);
+    let num2;
+    do {
+        num2 = +prompt("Input the second number")
+        if (!isNaN(num2)&& num2>0  && Number.isInteger(num2)){
+            break;
+        }
+    }while (true);
+    function check(firstNum,secondNum) {
+        let firstNumArr = [];
+        let secondNumArr =[];
+        for (let i = 1; i <firstNum ; i++) {
+            if (firstNum%i === 0){
+                firstNumArr.push(i);
+            }
+        };
+        for (let i = 1; i <secondNum ; i++) {
+            if (secondNum%i ===0){
+                secondNumArr.push(i);
+            }
+        }
+        let sumFirst=0;
+        let sumSecond = 0;
+        for (const num of firstNumArr) {
+            sumFirst += num;
+        }
+        for (const num of secondNumArr) {
+            sumSecond+=num;
+        }
+        if (firstNum === sumSecond && secondNum === sumFirst){
+            alert("Số "+ firstNum +" và "+ secondNum +" là cặp số  thân thiết" );
+        } else {
+            alert("Số "+ firstNum +" và "+ secondNum +" không là cặp số  thân thiết" );
+        }
+    }
+    check(num1,num2);
+</script>
+</body>
+</html>

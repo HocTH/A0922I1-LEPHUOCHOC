@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>findTheSymbol</title>
 </head>
 <body>
-$END$
 </body>
+<SCRIPT>
+    var arr = [];
+    var i = 0;
+    do {
+        var inputText = prompt("Input the text");
+        arr[i] = inputText;
+        var signal = confirm("Do you want to continue input the text?")
+        i++
+    }while (signal)
+var symbol = prompt("Input the Symbol to find.")
+    function checkPosition(arr,oneSymbol) {
+        if (arr.indexOf(oneSymbol) != -1){
+            var count  = 0;
+            for (const arrElement of arr) {
+                if (arrElement == oneSymbol){
+                    count++
+                };
+            };
+            return count;
+        };
+    };
+    alert("Result "+checkPosition(arr,symbol));
+</SCRIPT>
 </html>

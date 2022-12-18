@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>countDifferent</title>
+</head>
+<body>
+</body>
+<script>
+    var string  = prompt("Input the string");
+    var newArr =[];
+    function check(string) {
+        var sortArr = string.split("").sort();
+            newArr[0] = sortArr[0];
+        for (let i = 0; i < sortArr.length ; i++) {
+            if (newArr.indexOf(sortArr[i]) == -1){
+                newArr.push(sortArr[i])
+            };
+        };
+        var result = newArr.join("").trim();
+        console.log(result);
+        console.log(result.length)
+    };
+    check(string);
+</script>
+</html>

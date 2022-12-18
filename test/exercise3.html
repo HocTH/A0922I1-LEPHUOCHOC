@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>primeNumber</title>
+</head>
+<body>
+</body>
+<script>
+  let totalEle;
+  let arrNum = [];
+  let arrPrime = [];
+  do {
+      totalEle = +prompt("Input the total of array")
+      if (!isNaN(totalEle)&& totalEle>0 && Number.isInteger(totalEle)){
+          break;
+      }
+  }while (true);
+  let num;
+  do {
+      num = +prompt("Input the number")
+      if (!isNaN(num)&& num>0 && Number.isInteger(num)){
+          arrNum.push(num);
+          totalEle--;
+      }
+  }while (totalEle !==0);
+  function isPrime(number) {
+      let flag = true;
+      for (let i = 2; i <= Math.sqrt(number); i++) {
+          if (number % i === 0 ) {
+              flag = false;
+              break;
+          }
+      }
+      return flag;
+  }
+function check(arr) {
+    for (let i = 0; i <arr.length ; i++) {
+          if (isPrime(arr[i]) && arr[i]>=2){
+           arrPrime.push(arr[i]);
+          }
+    }
+    let reverARR = arrPrime.sort((a, b) => a-b);
+    alert("Arr of the prime number: "+"["+reverARR+"]"+"\n"+"Quanity of Element in array:"+arrPrime.length)
+};
+  check(arrNum);
+
+</script>
+</html>

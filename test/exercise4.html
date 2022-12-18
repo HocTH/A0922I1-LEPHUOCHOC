@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile</title>
+    <style>
+        button{
+            color: black;
+            background-color: blue;
+        }
+        table,td,th{
+            border: 1px solid;
+        }
+        table{
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="id" placeholder="Input the id">
+<input type="text" id="name" placeholder="Input the name"><br>
+<input type="text" id="manufacturer" placeholder="Input the manufacter">
+<input type="text" id="cost" placeholder="Input the cost"><br>
+<button onclick="add()" >Add</button>
+<h3>Display All Product</h3>
+<p id="display"></p>
+</body>
+<script>
+    let result;
+    let arrMobile =[];
+   class Mobile{
+       constructor(id,name,manufacturer,cost) {
+           this.id = id;
+           this.name =name;
+           this.manufacturer = manufacturer;
+           this.cost = cost;
+       }
+       getId (){
+           return this.id;
+       }
+       setId(value){
+           this.id=value;
+       }
+       getName (){
+           return this.name;
+       }
+       setName(value){
+           this.name=value;
+       }
+       getManufacturer (){
+           return this.manufacturer;
+       }
+       setManufacturer(value){
+           this.manufacturer=value;
+       }
+       getCost (){
+           return this.cost;
+       }
+       setCost(value){
+           this.cost=value;
+       }
+       toString(){
+           return "The id:" + this.id +"The name: "+this.name
+               +"The manufacturer: "+this.manufacturer+"The cost: "+this.cost
+       }
+   };
+   function display() {
+           result = "<table>"+"<tr>"+"<th>ID</th>"+"<th>Name</th>"+"<th>Manufacturer</th>"+"<th>Cost</th>" +"</tr>";
+       for (let i = 0; i <arrMobile.length ; i++) {
+           result += "<tr>"+"<th>"+arrMobile[i].getId()+"</th>"+"<th>"+arrMobile[i].getName()+"</th>"+"<th>"+arrMobile[i].getManufacturer()+"</th>"+"<th>"+arrMobile[i].getCost() +"</th>"+"</tr>"
+       }
+       result += "</table>"
+       document.getElementById("display").innerHTML = result;
+   }
+   display()
+function add() {
+     let id = document.getElementById("id").value;
+    let name = document.getElementById("name").value;
+    let manufacturer = document.getElementById("manufacturer").value;
+    let cost = document.getElementById("cost").value;
+    let mobile = new Mobile(id,name,manufacturer,cost);
+    arrMobile.push(mobile);
+    console.log(arrMobile)
+    arrMobile.sort((a, b) => a.name.localeCompare(b.name))
+    display()
+}
+
+</script>
+</html>

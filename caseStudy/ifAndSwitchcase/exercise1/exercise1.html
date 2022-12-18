@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>salary</title>
+</head>
+<body>
+</body>
+<script>
+    class Staff {
+        constructor(name,salary) {
+            this.name = name;
+            this.salary = salary;
+        }
+
+        getname() {
+            return this.name;
+        };
+
+        setname(value) {
+            this.name = value;
+        }
+
+        setsalary(value) {
+            this.salary = value;
+        }
+
+        getsalary() {
+            return this.salary;
+        };
+        taxSub(salary){
+            if (this.salary >15 ){
+                return this.salary*0.2 ;
+            }else{
+                if (this.salary >=7 && this.salary <=15 ){
+                    return this.salary*0.1;
+
+                } else {
+                   return  this.salary*0.05;
+                };
+            };
+        };
+        netSalary(){
+            var net = this.salary - this.taxSub()
+            return alert("Net salary of "+this.name+ " is "+net + " after sub tax "+ this.taxSub());
+        };
+    };
+    var staff1 = new Staff("tinh",15);
+    var staff2 = new Staff("hoc",20);
+    staff1.taxSub();
+    staff1.netSalary();
+    staff2.taxSub();
+    staff2.netSalary()
+</script>
+</html>
