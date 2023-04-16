@@ -1,0 +1,87 @@
+body{
+    font-family: Arial;
+    padding-left: 0;
+    padding-right: 0;
+}
+.logo {
+    font-size: 20px;
+    color: blue;
+    padding: 0;
+    margin: 0;
+}
+#menu{
+    height: 40px;
+    padding: 5px;
+    margin:0;
+    background-color: lightgray;
+    border: 1px solid #CDCDCD;
+    display: flex;
+    justify-content: space-around;
+}
+
+#menu ul, #menu li{
+    padding:0;
+    margin:0;
+}
+#menu ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+#menu li{
+    margin-right: 10px;
+    margin-left: 10px;
+    border-left: 2px solid black;
+}
+#menu li a{
+    height: 40px;
+    display: block;
+    text-decoration:none;
+    text-align: center;
+    line-height: 40px;
+    color: black;
+    font-weight: bold;
+}
+#menu li a:hover{
+    color: dimgrey;
+}
+.container {
+    display: flex;
+    margin-top: 15px;
+}
+aside{
+    width: 30%;
+    background-color: lightgray;
+}
+section{
+    width: 70%;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+}
+.video-item{
+    display: flex;
+    flex-direction: column;
+}
+.video-item img {
+    width: 100%;
+}
+.video-display{
+    padding-left: 20%;
+    padding-right: 20%;
+}
+.view {
+    font-size: 15px;
+    font-weight: bold;
+    color: gray;
+}
+.content {
+    font-weight: bold;
+    color: gray;
+}
+.footer {
+    text-align: center;
+    background-color: lightgray;
+    margin-top: 10px;
+    padding: 20px;
+}

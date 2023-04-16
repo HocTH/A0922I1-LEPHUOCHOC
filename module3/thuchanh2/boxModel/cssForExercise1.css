@@ -1,0 +1,36 @@
+body{
+    font-family: "Times New Roman";
+    font-size: 0.9em;
+}
+header,footer{
+    padding: 10px;
+    color: white;
+    background-color: black ;
+}
+section{
+    margin: 5px;
+    padding: 10px;
+    background-color: lavender;
+    width: 75%;
+    display: inline-block;
+}
+article{
+    margin: 5px;
+    padding: 10px;
+    background-color: white;
+}
+nav ul {
+    padding: 0;
+}
+aside{
+    width: 10%;
+    margin: 5px;
+    padding: 10px;
+    float: right;
+    background-color: lavender;
+    height: auto;
+}
+nav ul li {
+    display: inline;
+    margin: 5px;
+}

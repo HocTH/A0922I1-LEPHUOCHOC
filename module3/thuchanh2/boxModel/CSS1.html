@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .container > div {
+
+            background-color: orange;
+            border: 1px solid #fff;
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+        .container {
+            display: grid;
+            grid-template-areas:
+            "header header"
+            "nav nav"
+            "section aside"
+            "article aside"
+            "footer footer"
+        ;
+        }
+
+        .item1 {
+            grid-area: header;
+        }
+
+        .item2 {
+            grid-area: nav;
+        }
+
+        .item3 {
+            grid-area: section
+        }
+
+        .item4 {
+            grid-area: article
+        }
+
+        .item5 {
+            grid-area: aside;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item6 {
+            grid-area: footer;
+            color: white;
+        }
+        ul li {
+            position: relative;
+            float: left;
+        }
+        li{
+            width: auto;
+            padding: 10px;
+            margin: 10px;
+            list-style: none;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="item1"><h1>Monday Times</h1></div>
+    <div class="item2" style="background-color: darkcyan">
+        <ul>
+            <li>News</li>
+            <li>Sports</li>
+            <li>Weather</li>
+        </ul>
+    </div>
+    <div class="item3"><h2>News Section</h2></div>
+    <div class="item4"><h2>News Article</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est
+            nibh, et consectetur tortor feugiat at.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est
+            nibh, et consectetur tortor feugiat at.</p>
+    </div>
+    <div class="item5">
+        <h2>aside</h2>
+    </div>
+    <div class="item6" style="background-color: black">   <p>&copy; 2014 Monday Times. All rights reserved.</p></div>
+</div>
+</body>
+</html>
