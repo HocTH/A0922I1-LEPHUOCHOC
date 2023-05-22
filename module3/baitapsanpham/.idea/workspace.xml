@@ -5,64 +5,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="629ec63b-593b-4111-a9be-428e8d076229" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/baitapsanpham/controller/ProductServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/baitapsanpham/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/baitapsanpham/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/baitapsanpham/service/ProductServiceI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/error-404.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/product/create.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/product/delete.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/product/edit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/product/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/product/view.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module1/pass/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../module1/pass/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module1/pass/exercise3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../module1/pass/exercise3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module2" beforeDir="false" afterPath="$PROJECT_DIR$/../../module2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ERD.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FURAMA.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QuanLySanPham.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../baitap1-.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../baitap1.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../baitapbai5.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercisequery1.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../furama12.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hoc.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../nghia.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuchanh.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuchanh13031023.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuchanh2.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuchanh22.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuchanhquanlisinhvien.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../thuchhanh20032023.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webbasic/zz2_calculator_app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webbasic/zz2_calculator_app/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webbasic/zz2_calculator_app/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webbasic/zz2_calculator_app/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webbasic/zz2_calculator_app/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webbasic/zz2_calculator_app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webbasic/zz2_calculator_app/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webbasic/zz2_calculator_app/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webbasic/zz2_calculator_app/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webbasic/zz2_calculator_app/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webbasic/zz2_calculator_app/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webbasic/zz2_calculator_app/src/main/java/com/example/zz2_calculator_app/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webbasic/zz2_calculator_app/src/main/java/demo/model/Calculator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webbasic/zz2_calculator_app/src/main/java/demo/servlet/CalculatorServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webbasic/zz2_calculator_app/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webbasic/zz2_calculator_app/src/main/webapp/index.jsp" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.gradle/7.4/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.gradle/7.4/checksums/md5-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.gradle/7.4/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.gradle/7.4/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.gradle/7.4/dependencies-accessors/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.gradle/7.4/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.gradle/7.4/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.gradle/file-system.probe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/build/tmp/war/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JDBC/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/module3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../praticeMangerCustomer/src/main/java/com/codegym/repository/DBConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../praticeMangerCustomer/src/main/java/com/codegym/repository/ICustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../praticeMangerCustomer/src/main/java/com/codegym/repository/customerRepositoryImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../praticeMangerCustomer/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../praticeMangerCustomer/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../praticeMangerCustomer/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../praticeMangerCustomer/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../praticeMangerCustomer/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../praticeMangerCustomer/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../praticeMangerCustomer/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../praticeMangerCustomer/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../praticeMangerCustomer/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../praticeMangerCustomer/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../praticeMangerCustomer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../praticeMangerCustomer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productManager11/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../productManager11/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/build/classes/java/main/com/example/usermanager/controller/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/build/classes/java/main/com/example/usermanager/controller/UserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/build/classes/java/main/com/example/usermanager/dao/IUserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/build/classes/java/main/com/example/usermanager/dao/IUserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/build/classes/java/main/com/example/usermanager/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/build/classes/java/main/com/example/usermanager/dao/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/build/libs/user-manager-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/build/libs/user-manager-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/src/main/java/com/example/usermanager/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/src/main/java/com/example/usermanager/controller/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/src/main/java/com/example/usermanager/dao/IUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/src/main/java/com/example/usermanager/dao/IUserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/src/main/java/com/example/usermanager/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/src/main/java/com/example/usermanager/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-manager/src/main/webapp/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../user-manager/src/main/webapp/user/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webbasic/list_customer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../webbasic/list_customer/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +88,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -228,6 +232,8 @@
       <workItem from="1681342999263" duration="1091000" />
       <workItem from="1681390378200" duration="10935000" />
       <workItem from="1681481520330" duration="17000" />
+      <workItem from="1682343550540" duration="8000" />
+      <workItem from="1682343638591" duration="3000" />
     </task>
     <servers />
   </component>

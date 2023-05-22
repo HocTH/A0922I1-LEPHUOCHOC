@@ -31,6 +31,6 @@
             </tr>
         </table>
     </fieldset>
-</form>>
+</form>
 </body>
 </html>

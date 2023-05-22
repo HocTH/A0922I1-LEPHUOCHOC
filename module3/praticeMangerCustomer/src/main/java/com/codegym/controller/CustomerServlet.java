@@ -12,28 +12,6 @@ import java.util.List;
 @WebServlet(name = "CustomerServlet", urlPatterns = "/customers")
 public class CustomerServlet extends HttpServlet {
     private CustomerService customerService = new CustomerServiceImpl();
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
-        if(action == null){
-            action = "";
-        }
-        switch (action){
-            case "create":
-                showCreateForm(request, response);
-                break;
-            case "edit":
-                showEditForm(request, response);
-                break;
-            case "delete":
-                break;
-            case "view":
-                break;
-            default:
-                listCustomers(request, response);
-                break;
-        }
-    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -49,11 +27,37 @@ public class CustomerServlet extends HttpServlet {
                 updateCustomer(request, response);
                 break;
             case "delete":
+                deleteCustomer(request,response);
                 break;
             default:
                 break;
         }
     }
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if(action == null){
+            action = "";
+        }
+        switch (action){
+            case "create":
+                showCreateForm(request, response);
+                break;
+            case "edit":
+                showEditForm(request, response);
+                break;
+            case "delete":
+                showDeleteForm(request,response);
+                break;
+            case "view":
+                viewCustomer(request,response);
+                break;
+            default:
+                listCustomers(request, response);
+                break;
+        }
+    }
+
     private void listCustomers(HttpServletRequest request, HttpServletResponse response) {
         List<Customer> customers = this.customerService.findAll();
         request.setAttribute("customers", customers);
