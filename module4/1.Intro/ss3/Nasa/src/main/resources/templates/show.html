@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v17.0" nonce="J0OnkClD"></script>
+<img width="50%" id="img-of-the-day" src="https://vcdn-vnexpress.vnecdn.net/2020/04/12/HH-901-and-HH-902-in-the-Carin-4272-5374-1586679438.jpg">
+<script>
+    let d = new Date();
+    document.getElementById("today").innerHTML = d;
+    let query = 'https://api.nasa.gov/planetary/apod?api_key=gDmGaMl1vduvvh4ZZwwGgAlMBR4CcHHA1a7rPWfC';
+    let request = new XMLHttpRequest();
+    request.open('GET', query);
+    request.onload = function() {
+        if (request.status === 200) {
+            let response = JSON.parse(request.responseText);
+            document.getElementById('img-of-the-day').setAttribute('src', response.url);
+        }
+    };
+    request.send();
+</script>
+
+<form th:action="@{/create}" method="post" th:object="${comment}">
+    <table>
+        <tr>
+            <td hidden>ID</td>
+            <td><input type="hidden" th:field="*{id}"></td>
+        </tr>
+        <tr>
+            <td>Rating</td>
+            <td>
+                <select th:field="*{rating}">
+                    <option th:value="1">1 </option>
+                    <option th:value="2">2 </option>
+                    <option th:value="3">3 </option>
+                    <option th:value="4">4 </option>
+                    <option th:value="5">5 </option>
+                </select>
+            </td>
+
+        </tr>
+        <tr>
+            <td>Author</td>
+            <td><input th:field="*{author}"></td>
+        </tr>
+        <tr>
+            <td>Feedback</td>
+            <td><textarea th:field="*{feedBack}"></textarea></td>
+        </tr>
+        <tr>
+            <td><input type="hidden" th:field="*{likes}"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Author</td>
+            <td>Rate</td>
+            <td>Date</td>
+            <td>Feedback</td>
+            <td>Number of like</td>
+            <td>Action</td>
+        </tr>
+        <tr th:each="c: ${comments}" th:object="${c}">
+            <td th:text="*{id}" ></td>
+            <td th:text="*{author}"></td>
+            <td th:text="*{rating}"></td>
+            <td th:text="*{date}"></td>
+            <td th:text="*{feedBack}"></td>
+            <td th:text="*{likes}"></td>
+            <td>
+                <a th:href="@{update/{id}(id=*{id})}"><img  style="width: 50px; height: auto" src="https://upload.wikimedia.org/wikipedia/commons/1/13/Facebook_like_thumb.png"></a>
+            </td>
+        </tr>
+    </table>
+<div id="comment_fb">
+    <div class="fb-comments" data-href="http://localhost:8080/comment" data-width="500" data-numposts="3"></div>
+</div>
+</body>
+</body>
+</html>

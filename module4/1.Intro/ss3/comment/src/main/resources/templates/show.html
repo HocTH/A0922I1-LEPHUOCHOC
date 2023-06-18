@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<img width="25%" id="img-of-the-day" src="https://vcdn-vnexpress.vnecdn.net/2020/04/12/HH-901-and-HH-902-in-the-Carin-4272-5374-1586679438.jpg">
+<script>
+    let d = new Date();
+    document.getElementById("today").innerHTML = d;
+    let query = 'https://api.nasa.gov/planetary/apod?api_key=gDmGaMl1vduvvh4ZZwwGgAlMBR4CcHHA1a7rPWfC';
+    let request = new XMLHttpRequest();
+    request.open('GET', query);
+    request.onload = function() {
+        if (request.status === 200) {
+            let response = JSON.parse(request.responseText);
+            document.getElementById('img-of-the-day').setAttribute('src', response.url);
+        }
+    };
+    request.send();
+</script>
+
+<form th:action="@{/create}" method="post" th:object="${comment}">
+    <table>
+        <tr>
+            <td>ID</td>
+            <td><input type="hidden" th:field="*{id}"></td>
+        </tr>
+        <tr>
+            <td>Rating</td>
+            <td>
+                <select th:field="*{rating}">
+                    <option th:value="1">1 </option>
+                    <option th:value="2">2 </option>
+                    <option th:value="3">3 </option>
+                    <option th:value="4">4 </option>
+                    <option th:value="5">5 </option>
+                </select>
+            </td>
+
+        </tr>
+        <tr>
+            <td>Author</td>
+            <td><input th:field="*{author}"></td>
+        </tr>
+        <tr>
+            <td>Feedback</td>
+            <td><textarea th:field="*{feedBack}"></textarea></td>
+        </tr>
+        <tr>
+            <td>Like</td>
+            <td><input type="hidden" th:field="*{likes}"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+<table>
+    <tr>
+        <td>ID</td>
+        <td>author</td>
+        <td>rate</td>
+        <td>date</td>
+        <td>feedback</td>
+        <td>Number of like</td>
+    </tr>
+    <tr th:each="c: ${comments}" th:object="${c}">
+        <td th:text="*{id}"></td>
+        <td th:text="*{author}"></td>
+        <td th:text="*{rating}"></td>
+        <td th:text="*{date}"></td>
+        <td th:text="*{feedBack}"></td>
+        <td th:text="*{likes}"></td>
+    </tr>
+</table>
+</body>
+</body>
+</html>
