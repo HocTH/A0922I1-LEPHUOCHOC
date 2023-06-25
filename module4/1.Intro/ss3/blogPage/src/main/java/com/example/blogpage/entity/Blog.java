@@ -1,24 +1,56 @@
 package com.example.blogpage.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import java.util.Date;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "findProductByName",
+                query = "select p from Blog p where p.name like '%:name%'")
+})
 public class Blog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
-    private String author;
-    private String content;
 
-    public Blog(int id, String name, String author, String content) {
+    @NotBlank(message = "Tên không được để trống")
+    private String name;
+    @NotBlank(message = "Tác giả không được để trống")
+    private String author;
+    @NotBlank(message = "Nội dung không được để trống")
+    private String content;
+    @ManyToOne
+    @JoinColumn(name = "category_id", referencedColumnName = "category_id")
+    private Category category;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private Date dateRelease;
+
+    public Blog(int id, String name, String author, String content, Category category, Date dateRelease) {
         this.id = id;
         this.name = name;
         this.author = author;
         this.content = content;
+        this.category = category;
+        this.dateRelease = dateRelease;
+    }
+
+    public Date getDateRelease() {
+        return dateRelease;
+    }
+
+    public void setDateRelease(Date dateRelease) {
+        this.dateRelease = dateRelease;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public Blog() {

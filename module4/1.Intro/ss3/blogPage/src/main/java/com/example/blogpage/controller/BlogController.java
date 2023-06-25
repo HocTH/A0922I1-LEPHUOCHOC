@@ -1,14 +1,15 @@
 package com.example.blogpage.controller;
 
 import com.example.blogpage.entity.Blog;
+import com.example.blogpage.entity.Category;
 import com.example.blogpage.service.BlogService;
+import com.example.blogpage.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -21,19 +22,29 @@ import java.util.stream.IntStream;
 public class BlogController {
     @Autowired
      private BlogService blogService;
+    @Autowired
+    private CategoryService categoryService;
     @GetMapping("/list")
     private ModelAndView showList(){
         List<Blog> blogs = blogService.findAll() ;
         ModelAndView modelAndView = new ModelAndView("list");
         modelAndView.addObject("blogs",blogs);
+        modelAndView.addObject("categories", categoryService.findAll());
         return modelAndView;
     }
     @GetMapping("/create")
     public String showCreate(Model model) {
         model.addAttribute("blog", new Blog());
+        model.addAttribute("categories", categoryService.findAll());
         return "create";}
     @PostMapping("/create")
-    public String doCreate(@ModelAttribute("blog") Blog blog) {
+    public String doCreate(@Validated  @ModelAttribute("blog") Blog blog,
+                           BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("categories",categoryService.findAll());
+            return "create";
+        }
+
         blogService.create(blog);
         return "redirect:/list";
     }
@@ -47,11 +58,13 @@ public class BlogController {
     @GetMapping("/update")
     public String showUpdate(@RequestParam("id") int id, Model model) {
         model.addAttribute("blog", blogService.findById(id));
+        model.addAttribute("categories", categoryService.findAll());
         return "update";
     }
     @PostMapping("/update")
     public String doUpdate(@ModelAttribute("blog") Blog blog) {
-       blogService.update(blog);
+       blog.setCategory(categoryService.findById(blog.getCategory().getCategoryId()));
+        blogService.update(blog);
         return "redirect:/list";
     }
     @GetMapping("/delete/{id}")
@@ -77,5 +90,31 @@ public class BlogController {
             model.addAttribute("pageNumbers", pageNumbers);
         }
         return "listpaging";
+    }
+    @GetMapping(value = "/listpagingslice")
+    public String listpagingslice(Model model, @RequestParam("page") Optional<Integer> page,
+                                  @RequestParam("size") Optional<Integer> size) {
+        int currentPage = page.orElse(1);
+        int pageSize = size.orElse(5);
+        Slice<Blog> blogs = blogService.findAllWithSlice(PageRequest.of(currentPage - 1, pageSize));
+        model.addAttribute("blogs", blogs.getContent());
+        model.addAttribute("page", blogs);
+        return "listPagingSlice";
+    }
+    @GetMapping("/search")
+    public String search(@RequestParam("name") String name, Model model) {
+        List<Blog> blogs = blogService.findBlogByName(name);
+        model.addAttribute("blogs", blogs);
+        model.addAttribute("name", name);
+        return "list";
+    }
+
+    @GetMapping("/category/{id}")
+    public String viewCategory(@PathVariable("id") int id, Model model){
+        Category category = categoryService.findById(id);
+        Iterable<Blog> blogs = blogService.findAllByCategory(category);
+        model.addAttribute("category", category);
+        model.addAttribute("blogs", blogs);
+       return "listCategory";
     }
 }

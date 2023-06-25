@@ -1,10 +1,12 @@
 package com.example.blogpage.service;
 
 import com.example.blogpage.entity.Blog;
+import com.example.blogpage.entity.Category;
 import com.example.blogpage.repo.BlogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -50,4 +52,21 @@ public class BlogServiceImpl implements BlogService {
     public Page<Blog> findAllWithPaging(Pageable pageable) {
         return repository.findAll(pageable);
     }
+
+    @Override
+    public Slice<Blog> findAllWithSlice(Pageable pageable) {
+        return repository.findAll(pageable);
+    }
+
+    @Override
+    public List<Blog> findBlogByName(String name) {
+        return repository.findAllByNameContaining(name);
+    }
+
+    @Override
+    public Iterable<Blog> findAllByCategory(Category category) {
+        return repository.findAllByCategory(category);
+    }
+
+
 }

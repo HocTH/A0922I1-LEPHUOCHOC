@@ -10,15 +10,37 @@
     <table>
         <tr>
             <td>Name Blogging</td>
-            <td><input type="text" th:field="*{name}"></td>
+            <td><input type="text" th:field="*{name}">
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+            </td>
         </tr>
         <tr>
             <td>Title</td>
-            <td><input type="text" th:field="*{author}"></td>
+            <td><input type="text" th:field="*{author}">
+                <span th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></span>
+            </td>
         </tr>
         <tr>
             <td>Content</td>
-            <td><input type="text" th:field="*{content}"></td>
+            <td><input type="text" th:field="*{content}" >
+            <span th:if="${#fields.hasErrors('content')}"th:errors="*{content}"> </span>
+            </td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td>
+                <select th:field="*{category.categoryId}">
+                    <option th:each="c: ${categories}" th:value="${c.categoryId}"
+                            th:text="${c.categoryName}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Date release</td>
+            <td>
+                <input type="text" th:field="*{dateRelease}" placeholder="dd/MM/yyyy" />
+                <span th:if="${#fields.hasErrors('dateRelease')}" th:errors="*{dateRelease}"></span>
+            </td>
         </tr>
         <tr>
             <td><input type="submit" value="Create"></td>

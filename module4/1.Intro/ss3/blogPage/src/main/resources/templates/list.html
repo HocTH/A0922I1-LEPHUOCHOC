@@ -8,17 +8,47 @@
 </head>
 <body>
 <h1>List Blog</h1>
-<table id="blog">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink" >
+                        <li th:each="c:${categories}" ><a th:href="@{category/{id}(id=${c.categoryId})}" class="dropdown-item" th:text="${c.getCategoryName()}"> </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<form th:action="@{search}" method="get">
+    <span id="redcolor"> Name</span> : <input type="text" name="name" th:value="${name != null ? name:''}">
+    <input type="submit" value="Search">
+</form>
+<table id="blog" class="table table-striped">
     <tr>
         <td>ID</td>
         <td>Name of Blog</td>
         <td>Author</td>
+        <td>Content</td>
+        <td>Category</td>
+        <td>Date</td>
         <td>Action</td>
     </tr>
     <tr th:each="b: ${blogs}" th:object="${b}">
         <td th:text="*{id}"></td>
         <td th:text="*{name}"></td>
         <td th:text="*{author}"></td>
+        <td th:text="*{content}"></td>
+        <td th:text="*{category.getCategoryName()}"></td>
+        <td th:text="*{#dates.format(dateRelease,'dd/MM/yyyy')}"></td>
         <td>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" th:data-bs-target="'#'+|Blog${b.id}|">

@@ -18,14 +18,21 @@
         <td>Author</td>
         <td th:text="*{author}"></td>
     </tr>
-
     <tr>
         <td>content</td>
         <td th:text="*{content}"></td>
     </tr>
     <tr>
+        <td>Category:</td>
+        <td th:text="${blog.category.categoryName}"></td>
+    </tr>
+    <tr>
+        <td>Date release:</td>
+        <td th:text="${#dates.format(blog.dateRelease, 'dd/MM/yyyy')}"></td>
+    </tr>
+    <tr>
         <td>
-            <button><a th:href="@{list}">BACK</a></button>
+            <button><a th:href="@{/list}">BACK</a></button>
         </td>
     </tr>
 </table>

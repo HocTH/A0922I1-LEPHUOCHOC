@@ -8,17 +8,23 @@
 </head>
 <body>
 <h1>List Blog</h1>
-<table id="blog">
+<table id="blog" class="table table-striped">
     <tr>
         <td>ID</td>
         <td>Name of Blog</td>
         <td>Author</td>
         <td>Action</td>
+        <td>Content</td>
+        <td>Category</td>
+        <td>Date</td>
     </tr>
     <tr th:each="b: ${blogs}" th:object="${b}">
         <td th:text="*{id}"></td>
         <td th:text="*{name}"></td>
         <td th:text="*{author}"></td>
+        <td th:text="*{content}"></td>
+        <td th:text="*{category.getCategoryName()}"></td>
+        <td th:text="*{#dates.format(dateRelease,'dd/MM/yyyy')}"></td>
         <td>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" th:data-bs-target="'#'+|Blog${b.id}|">
@@ -51,6 +57,7 @@
             </div>
         </div>
     </tr>
+
 </table>
 <div th:if="${blogs.totalPages > 0}" class="pagination"
      th:each="pageNumber : ${pageNumbers}">
