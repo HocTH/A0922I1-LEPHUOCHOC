@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class CommentController {
     @Autowired
@@ -18,7 +21,20 @@ public class CommentController {
         return "show";
     }
 @PostMapping("/create")
-    public String doCreate(@ModelAttribute("comment") Comment comment, @RequestParam("id") int id){
+    public String doCreate(@ModelAttribute("comment") Comment comment, @RequestParam("id") int id) throws Exception{
+         String[] list = {"dm", "fuck","hate"};
+         String[] authorError ={"messi","ronaldo"};
+
+    for (String c:list) {
+        if(comment.getFeedBack().contains(c)){
+            throw new Exception();
+        }
+    }
+    for (String a: authorError) {
+        if (comment.getAuthor().contains(a)){
+            throw new Exception();
+        }
+    }
         commentRepository.create(comment);
         return "redirect:/comment";
 }

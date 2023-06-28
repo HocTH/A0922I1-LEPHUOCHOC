@@ -8,7 +8,6 @@ import javax.validation.GroupSequence;
 import javax.validation.constraints.*;
 
 @Entity
-
 public class Song {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +15,7 @@ public class Song {
     @NotBlank(message = "Not empty")
     @Size(max = 800,message = "so big")
     @Pattern(regexp = "^[a-zA-Z0-9]+$",message = "Not a special symbol")
+
     private String name;
     @NotBlank(message = "Not empty")
     @Size(max = 300,message = "so big")

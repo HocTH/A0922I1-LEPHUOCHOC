@@ -117,4 +117,10 @@ public class BlogController {
         model.addAttribute("blogs", blogs);
        return "listCategory";
     }
+    @GetMapping("/sort")
+    public String showSort( Model model) {
+        List<Blog> blogs = blogService.sortByDate();
+        model.addAttribute("blogs", blogs);
+        return "list";
+    }
 }

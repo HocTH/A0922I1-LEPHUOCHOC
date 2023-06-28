@@ -19,4 +19,5 @@ public interface BlogService {
     public Slice<Blog> findAllWithSlice(Pageable pageable);
     List<Blog> findBlogByName(String name);
     Iterable<Blog> findAllByCategory(Category category);
+    List<Blog> sortByDate();
 }

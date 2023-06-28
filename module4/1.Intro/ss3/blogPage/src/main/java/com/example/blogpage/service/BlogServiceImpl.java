@@ -68,5 +68,8 @@ public class BlogServiceImpl implements BlogService {
         return repository.findAllByCategory(category);
     }
 
-
+    @Override
+    public List<Blog> sortByDate() {
+        return repository.sortByDate();
+    }
 }
