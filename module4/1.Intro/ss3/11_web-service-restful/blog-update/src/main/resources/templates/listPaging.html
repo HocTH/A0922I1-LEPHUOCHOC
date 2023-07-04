@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css.css.css">
+</head>
+<body>
+<h1>Show list</h1>
+
+<h3><a th:href="@{/create/blog}">Create Blog</a></h3>
+<h3><a th:href="@{/create/category}">Create Category</a></h3>
+<h3><a th:href="@{/showListCategory}">Show list Category</a></h3>
+<form action="/search" method="post">
+    <input type="text" name="name" >
+    <input type="submit" value="Search">
+</form>
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Conten</td>
+        <td>Category</td>
+        <td>Action</td>
+    </tr>
+    <tr th:each="b: ${listBlog}" th:object="${b}">
+        <td th:text="*{id}"></td>
+        <td th:text="*{nameBlog}"></td>
+        <td th:text="*{content}"></td>
+        <td th:text="*{category.categoryName}"></td>
+        <td>
+            <a th:href="@{/delete/{id}(id=*{id})}">Delete</a>
+            <a th:href="@{/update/{id}(id=*{id})}">Update</a>
+            <a th:href="@{/detail/{id}(id=*{id})}">Detail</a>
+        </td>
+    </tr>
+    <tr></tr>
+</table>
+<!--<div th:if="${blogs.totalPages > 0}" class="pagination"-->
+<!--     th:each="pageNumber : ${pageNumbers}">-->
+<!--    <a th:href="@{/listpaging(size=${blogs.size}, page=${pageNumber})}"-->
+<!--      th:class="${pageNumber==blogs.number + 1} ? active" th:text=${pageNumber}></a>-->
+<!--</div>-->
+<div>
+    <span>
+        <a th:if="${listBlog.hasPrevious()}" th:href="@{/listpaging(page = ${listBlog.number - 1})}">Previous</a>
+    </span>
+    <span th:each="pageNo: ${#numbers.sequence(0,listBlog.totalPages - 1)}">
+        <a th:href="@{/listpaging(page = ${pageNo})}" th:text="${pageNo}"></a>
+    </span>
+    <span>
+        <a th:if="${listBlog.hasNext()}" th:href="@{/listpaging(page = ${listBlog.number +1})}">Next</a>
+    </span>
+</div>
+
+
+</body>
+</html>

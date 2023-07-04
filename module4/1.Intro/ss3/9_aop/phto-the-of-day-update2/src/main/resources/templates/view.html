@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<img id="img-of-the-day">
+
+<script>
+    let query = 'https://api.nasa.gov/planetary/apod?api_key=i6VoGfQKsubw8bFnSnv9mtMSuJO2bu6MdPnqROEy';
+    let request = new XMLHttpRequest();
+    request.open('GET', query);
+    request.onload = function () {
+        if (request.status === 200) {
+            let response = JSON.parse(request.responseText);
+            document.getElementById('img-of-the-day').setAttribute('src', response.url);
+        }
+    };
+    request.send();
+</script>
+
+<form th:action="@{/create}" method="post" th:object="${photo}">
+    <select th:field="*{rating}">
+        <option th:value="1">1 Sao</option>
+        <option th:value="2">2 Sao</option>
+        <option th:value="3">3 Sao</option>
+        <option th:value="4">4 Sao</option>
+        <option th:value="5">5 Sao</option>
+    </select><br>
+    <p>Author</p>
+    <input type="text" th:field="*{nameAuthor}">
+    <p>Feedback:</p>
+    <textArea  th:field="*{feedBack}" rows="4" cols="50" required maxlength="100"></textArea>
+    <br>
+    <input type="submit" value="Comment"><br>
+    <span>Today comment</span>
+    <table>
+        <tr>
+            <td>Author</td>
+            <td>Feedback</td>
+            <td>Date</td>
+            <td>Like</td>
+            <td>Rating</td>
+            <td>Number of like</td>
+        </tr>
+        <tr th:each="p:${photos}" th:object="${p}">
+            <td th:text="*{nameAuthor}"></td>
+            <td th:text="*{feedBack}"></td>
+            <td th:text="*{date}"></td>
+            <td th:text="*{likes}"></td>
+            <td th:text="*{rating}"></td>
+            <td><a th:href="@{/likeComment{id}(id=*{id})}">Like comment</a></td>
+        </tr>
+    </table>
+    <div>
+    <span>
+        <a th:if="${photos.hasPrevious()}" th:href="@{/view(page = ${photos.number - 1})}">Previous</a>
+    </span>
+        <span th:each="pageNo: ${#numbers.sequence(0,photos.totalPages - 1)}">
+        <a th:href="@{/view(page = ${pageNo})}" th:text="${pageNo}"></a>
+    </span>
+        <span>
+        <a th:if="${photos.hasNext()}" th:href="@{/view(page = ${photos.number +1})}">Next</a>
+    </span>
+    </div>
+</form>
+</body>
+</html>

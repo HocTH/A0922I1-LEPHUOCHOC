@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>List Category</h3>
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Action</td>
+    </tr>
+    <tr th:each="b:${listCategory}" th:object="${b}">
+        <td th:text="*{categoryId}"></td>
+        <td th:text="*{categoryName}"></td>
+        <td>
+            <a th:href="@{/updateCategory{categoryId}(categoryId=*{categoryId})}">Update</a>
+            <a th:href="@{/deleteCategory{categoryId}(categoryId=*{categoryId})}">Delete</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

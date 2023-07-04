@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Return book</title>
+</head>
+<body>
+<form th:action="@{/doReturn}" method="post">
+    <span>Code</span>
+    <input type="text" name="code" placeholder="Nhập mã code muốn trả">
+    <input type="submit" value="Return book">
+    <span th:text="${erorr}"></span>
+</form>
+
+</body>
+</html>

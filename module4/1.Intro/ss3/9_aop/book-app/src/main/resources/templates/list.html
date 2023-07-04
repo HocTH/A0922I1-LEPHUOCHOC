@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>List book</title>
+</head>
+<body>
+<h1 th:text="${error}"></h1>
+<h3><a th:href="@{/create}">Create Book</a></h3>
+<table>
+  <tr>
+    <td>ID</td>
+    <td>Title</td>
+    <td>Author</td>
+    <td>Year composed</td>
+    <td>Quantity</td>
+    <td>Action</td>
+  </tr>
+  <tr th:each="b: ${books}" th:object="${b}">
+    <td th:text="*{bookId}"></td>
+    <td th:text="*{title}"></td>
+    <td th:text="*{author}"></td>
+    <td th:text="*{yearComposed}"></td>
+    <td th:text="*{quantity}"></td>
+    <td>
+      <a th:href="@{/borrow/{bookId}(bookId=*{bookId})}">Borrow</a>
+      <a th:href="@{/return}">Return</a>
+<!--      <a th:href="@{/doReturn/{id}(id=${c.id})}">Return</a>-->
+    </td>
+  </tr>
+  <tr></tr>
+</table>
+
+</body>
+</html>

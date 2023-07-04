@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>List users</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>User name</th>
+    <th>Book name</th>
+    <th>Borrow date</th>
+    <th>Pay day</th>
+    <th>Status</th>
+  </tr>
+
+  <tr th:each="b : ${borrowBook}">
+    <td th:text="${b.userId}"></td>
+    <td th:text="${b.userName}"></td>
+    <td><span th:if="${b.book != null}" th:text="${b.book.name}"></span></td>
+    <td th:text="${#dates.format(b.borrowDate, 'dd/MM/yyyy')}"></td>
+    <td th:text="${b.payDate}"></td>
+    <td th:if="${b.status}">Đã trả</td>
+    <td th:if="${!b.status}">Đang mượn</td>
+  </tr>
+</table>
+</body>
+</html>
