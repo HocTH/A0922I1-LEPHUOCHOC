@@ -11,5 +11,4 @@ public class ErrorController {
         model.addAttribute("error", e.getMessage());
         return "errorPage";
     }
-
 }

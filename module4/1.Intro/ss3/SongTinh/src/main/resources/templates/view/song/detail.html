@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Song</title>
+</head>
+<body>
+<table th:object="${song}">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Url</th>
+    </tr>
+    <tr>
+        <td th:text="*{id}"></td>
+        <td th:text="*{name}"></td>
+        <td th:text="*{author}"></td>
+        <td th:text="*{price}"></td>
+        <td th:text="${song.category.categoryName}"></td>
+        <td >
+            <audio controls >
+                <source th:src="@{/{u}(u=${song.url})}">
+            </audio>
+        </td>
+    </tr>
+</table>
+<a th:text="|Back to home|" th:href="@{/song/list}"></a>
+</body>
+</html>

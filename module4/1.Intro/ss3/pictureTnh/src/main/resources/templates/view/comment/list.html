@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Comment</title>
+</head>
+<body>
+<div>
+    <script>
+        let query = 'https://api.nasa.gov/planetary/apod?api_key=IdzcCXFgTEJ1ua5TvHAYMvIMIXLWXdFpFKbnJz3V';
+        let request = new XMLHttpRequest();
+        request.open('GET', query);
+        request.onload = function() {
+            if (request.status === 200) {
+                let response = JSON.parse(request.responseText);
+                document.getElementById('img-of-the-day').setAttribute('src', response.url);
+            }
+        };
+        request.send();
+    </script>
+    <img id="img-of-the-day">
+</div>
+<form th:action="@{/comment/create}" th:object="${comment}" method="post">
+<table>
+    <tr>
+        <td>Rating</td>
+        <td>
+            <select th:field="*{rate}">
+                <option th:value="1" >1</option>
+                <option th:value="2" >2</option>
+                <option th:value="3" >3</option>
+                <option th:value="4" >4</option>
+                <option th:value="5" >5</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Author</td>
+        <td >
+            <input th:field="*{author}">
+            <span th:if="${#fields.hasErrors('author')} " th:errors="*{author}"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Feedback</td>
+        <td><input th:field="*{feedBack}">
+        <span th:if="${#fields.hasErrors('feedBack')}" th:errors="*{feedBack}"></span></td>
+    </tr>
+    <tr>
+        <td><button type="submit">Comment</button></td>
+    </tr>
+</table>
+</form>
+<hr>
+<table>
+    <tr>
+        <th>Rating</th>
+        <th>Author</th>
+        <th>FeedBack</th>
+        <th>Date</th>
+        <th>Reaction</th>
+    </tr>
+    <tr th:each="c:${comments}" th:object="${c}">
+        <td th:text="*{rate}"></td>
+        <td th:text="*{author}"></td>
+        <td th:text="*{feedBack}"></td>
+        <td th:text="*{#dates.format(date,'dd/MM/yyyy')}"></td>
+        <td><a th:href="@{/comment/update/{id}(id=*{id})}">Like</a>
+            <span th:text="*{likes}"></span>
+        </td>
+    </tr>
+</table>
+<a th:if="${comments.hasPrevious()}" th:href="@{/comment/list(page = ${comments.number - 1})}">Previous</a>
+<span th:text="${comments.number + 1}"></span>/
+<span th:text="${comments.totalPages}"></span>
+<a th:if="${comments.hasNext()}" th:href="@{/comment/list(page =${comments.number + 1})}">Next</a>
+</body>
+</html>

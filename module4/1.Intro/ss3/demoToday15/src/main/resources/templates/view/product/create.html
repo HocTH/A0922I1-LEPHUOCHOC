@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Product</title>
+</head>
+<body>
+<form th:action="@{/product/create}" method="post" th:object="${product}">
+   <table>
+    <tr>
+        <td>Id:</td>
+        <td><input type="text" th:field="*{id}">
+        <span th:if="${#fields.hasErrors('id')} " th:errors="*{id}"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Name:</td>
+        <td><input type="text" th:field="*{name}">
+            <span th:if="${#fields.hasErrors('name')} " th:errors="*{name}"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Quantity:</td>
+        <td><input type="text" th:field="*{quantity}">
+            <span th:if="${#fields.hasErrors('quantity')} " th:errors="*{quantity}"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Price:</td>
+        <td><input type="text" th:field="*{price}">
+            <span th:if="${#fields.hasErrors('quantity')} " th:errors="*{price}"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Category:</td>
+        <td>
+            <select  th:field="*{category.categoryId}">
+                <option th:each="c:${categories}" th:text="${c.categoryName}" th:value="${c.categoryId}"></option>
+            </select>
+        </td>
+    <tr>
+        <td>Date release:</td>
+        <td><input type="text" th:field="*{dateRelease}" placeholder="dd/MM/yyyy">
+            <span th:if="${#fields.hasErrors('dateRelease')} " th:errors="*{dateRelease}"></span>
+        </td>
+    </tr>
+    </tr>
+    <tr>
+        <td><input type="submit" value="Submit"></td>
+        <td><input type="reset" value="Reset"></td>
+    </tr>
+   </table>
+</form>
+</body>
+</html>
