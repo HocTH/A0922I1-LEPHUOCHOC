@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<table class="table">
+    <tr>
+        <th>STT</th>
+        <th>Chon</th>
+        <th>Ten san pham</th>
+        <th>Gia bat dau</th>
+        <th>Loai san pham</th>
+        <th>Tinh trang</th>
+        <th>Hanh dong</th>
+    </tr>
+    <tr th:each="p,status:${products}" th:object="${p}">
+        <td th:text="|No.${status}|"></td>
+        <td th:text="*{name}"></td>
+         <td th:text="*{price}"></td>
+         <td th:text="*{category.getNameCategory()}"></td>
+         <td th:text="*{status}"></td>
+        <td>
+            <a th:href="@{/product/update(id=*{id})}">Update</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

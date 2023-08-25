@@ -11,10 +11,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.sql.SQLException;
 import java.util.List;
 
 @Controller
@@ -27,18 +23,7 @@ public class ProductController {
     @Autowired
     private ProductValidate validate;
     @GetMapping("/list")
-    public String showList(@CookieValue(value = "count", defaultValue = "0") int count,
-                           Model model, HttpServletResponse response,
-                           HttpSession httpSession) {
-//        String username = (String) httpSession.getAttribute("user");
-//        if (username == null || username.equals("")) {
-//            return "redirect:/login";
-//        }
-
-        Cookie cookie = new Cookie("count", ++count + "");
-        cookie.setMaxAge(5);
-        response.addCookie(cookie);
-        model.addAttribute("count", count);
+    public String showList(Model model) {
         model.addAttribute("products", productRepository.findAll());
         return "/view/product/list";
     }
@@ -91,11 +76,5 @@ public class ProductController {
         model.addAttribute("products", productList);
         model.addAttribute("name", name);
         return "/view/product/list";
-    }
-
-    @ExceptionHandler(SQLException.class)
-    public String handleError(SQLException e, Model model) {
-        model.addAttribute("error", e.getMessage());
-        return "errorPage";
     }
 }

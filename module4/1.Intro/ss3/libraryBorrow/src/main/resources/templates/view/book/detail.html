@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>Detail Book</h1>
+<table th:object="${book}">
+  <tr>
+    <td>Id</td>
+    <td th:text="*{idBook}"></td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td th:text="*{nameBook}"></td>
+  </tr>
+  <tr>
+    <td>Author</td>
+    <td th:text="*{author}"></td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td th:text="*{description}"></td>
+  </tr>
+  <tr>
+    <td>Quantity</td>
+    <td th:text="*{quantity}"></td>
+  </tr>
+  <tr>
+    <td>
+      <a th:href="@{/book/list}"><button>Back</button></a>
+    </td>
+    <td>
+      <a th:href="@{/book/doBorrowBook(id=*{idBook})}"><button>Borrow</button></a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>Borrow</h1>
+
+<form th:action="@{/book/doBorrowBook}" method="post" th:object="${card}">
+  <table>
+    <tr>
+      <td>Book name:</td>
+      <td th:text="${book1.nameBook}">
+      </td>
+        <input th:field="*{book.idBook}" hidden>
+
+    </tr>
+    <tr>
+      <td>Student name:</td>
+      <td>
+        <select th:field="*{student.idStudent}">
+          <option th:each="s:${students}" th:text="${s.getNameStudent()}" th:value="${s.getIdStudent()}"></option>
+        </select>
+
+      </td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td><input th:field="*{status}" type="text"></td>
+    </tr>
+<tr>
+  <td>Day Pay</td>
+  <td>
+    <input input type="text" th:field="*{payDay}" placeholder="dd/MM/yyyy">
+  </td>
+</tr>
+    <tr>
+      <td><input type="reset" value="Reset"></td>
+      <td><input type="submit" value="Borrow"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

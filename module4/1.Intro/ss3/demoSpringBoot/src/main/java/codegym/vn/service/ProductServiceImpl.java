@@ -7,12 +7,10 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.logging.Logger;
 
 @Service
 @Transactional
 public class ProductServiceImpl implements ProductService{
-    private Logger logger = Logger.getLogger(ProductServiceImpl.class.getName());
     @Autowired
     private ProductRepository repository;
     @Override
@@ -37,7 +35,6 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public List<Product> findAll() {
-        logger.info("Run findAll method");
         return (List<Product>) repository.findAll();
     }
 

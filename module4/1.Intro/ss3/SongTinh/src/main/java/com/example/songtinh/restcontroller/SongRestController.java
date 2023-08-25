@@ -18,8 +18,6 @@ public class SongRestController {
     SongService songService;
     @Autowired
     CategoryService categoryService;
-
-
     @GetMapping("/delete")
         public ResponseEntity<Song> delete(@RequestParam("id") int id){
         songService.deleteById(id);

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="color: red">Card List</h1>
+<table>
+    <tr>
+        <th>Id </th>
+        <th>Book name</th>
+        <th>Student name</th>
+        <th>Status</th>
+        <th>Borrow Day</th>
+        <th>Pay Day</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="c:${cards}" th:object="${c}">
+        <td th:text="*{id}"></td>
+        <td th:text="*{book.nameBook}"></td>
+        <td th:text="*{student.getNameStudent()}"></td>
+        <td th:text="*{status}"></td>
+        <td th:text="*{#dates.format(borrowedDay,'dd/MM/yyyy')}"></td>
+        <td th:text="*{#dates.format(payDay,'dd/MM/yyyy')}"></td>
+        <td ><a th:href="@{/card/detail(id=*{id})}"><button>Detail</button></a></td>
+    </tr>
+</table>
+</body>
+</html>

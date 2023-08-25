@@ -32,7 +32,8 @@
         <td>Tình trạng</td>
         <td>Hành động</td>
     </tr>
-    <tr th:each="c: ${products}" th:object="${c}">
+    <tr th:each="c,h: ${products}" th:object="${c}">
+        <td th:text="${h.count}"></td>
         <td th:text="*{id}"></td>
         <td> <button type="button" class="btn btn-primary" data-bs-toggle="modal" th:data-bs-target="'#'+|t${c.id}|">
             Chọn
