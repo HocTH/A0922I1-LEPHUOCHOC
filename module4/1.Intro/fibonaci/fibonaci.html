@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci</title>
+</head>
+<body>
+<script>
+    let fibonacci = (n) => {
+if (n<=1){
+    return n
+} else {
+    return fibonacci(n-1) +fibonacci(n-2)
+}
+    }
+   let sum_fibonacci = (n) =>{
+        let sum = 0;
+       for (let i = 0; i <n ; i++) {
+           sum+= fibonacci(i)
+           console.log("i: "+i)
+           console.log("fibonacci: " +fibonacci(i))
+           console.log("sum: "+sum)
+       }
+       return sum;
+   }
+console.log("Sum of fibonacci:" + sum_fibonacci(3));
+</script>
+</body>
+</html>
